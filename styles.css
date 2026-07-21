@@ -1,12 +1,12 @@
 /* Root Variables */
 :root {
-    --primary-color: #3d2817;
-    --secondary-color: #8b6f47;
-    --accent-color: #d4af37;
+    --primary-color: #001a4d;
+    --secondary-color: #003d99;
+    --accent-color: #ffffff;
     --text-color: #2c2c2c;
-    --light-bg: #f5f3f0;
+    --light-bg: #e6f0ff;
     --white: #ffffff;
-    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --shadow: 0 10px 30px rgba(0, 26, 77, 0.2);
     --transition: all 0.3s ease;
 }
 
@@ -75,7 +75,7 @@ body {
 }
 
 .nav-link:hover {
-    color: var(--accent-color);
+    color: var(--light-bg);
 }
 
 .hamburger {
@@ -148,7 +148,7 @@ body {
 }
 
 .cta-button:hover {
-    background-color: #fff;
+    background-color: var(--light-bg);
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
@@ -179,11 +179,12 @@ body {
     box-shadow: var(--shadow);
     text-align: center;
     transition: var(--transition);
+    border-top: 4px solid var(--primary-color);
 }
 
 .product-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 20px 40px rgba(0, 26, 77, 0.2);
 }
 
 .product-image {
@@ -206,7 +207,7 @@ body {
 
 .price {
     display: inline-block;
-    color: var(--accent-color);
+    color: var(--secondary-color);
     font-weight: bold;
     font-size: 1.1rem;
 }
@@ -248,7 +249,7 @@ body {
 }
 
 .features-list i {
-    color: var(--accent-color);
+    color: var(--secondary-color);
     margin-right: 10px;
 }
 
@@ -289,11 +290,12 @@ body {
     overflow: hidden;
     box-shadow: var(--shadow);
     transition: var(--transition);
+    border: 2px solid var(--primary-color);
 }
 
 .portfolio-item:hover {
     transform: scale(1.05);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 20px 40px rgba(0, 26, 77, 0.2);
 }
 
 .portfolio-image {
@@ -343,7 +345,7 @@ body {
 
 .info-item i {
     font-size: 2rem;
-    color: var(--accent-color);
+    color: var(--secondary-color);
     flex-shrink: 0;
 }
 
@@ -363,7 +365,7 @@ body {
 }
 
 .info-item a:hover {
-    color: var(--accent-color);
+    color: var(--primary-color);
 }
 
 .contact-form {
@@ -375,7 +377,7 @@ body {
 .contact-form input,
 .contact-form textarea {
     padding: 15px;
-    border: 2px solid #ddd;
+    border: 2px solid var(--light-bg);
     border-radius: 5px;
     font-family: inherit;
     font-size: 1rem;
@@ -386,7 +388,7 @@ body {
 .contact-form textarea:focus {
     outline: none;
     border-color: var(--secondary-color);
-    box-shadow: 0 0 10px rgba(139, 111, 71, 0.2);
+    box-shadow: 0 0 10px rgba(0, 61, 153, 0.2);
 }
 
 .submit-button {
@@ -404,7 +406,7 @@ body {
 .submit-button:hover {
     background-color: var(--secondary-color);
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 26, 77, 0.2);
 }
 
 /* Footer */
