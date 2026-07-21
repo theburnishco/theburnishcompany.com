@@ -35,25 +35,64 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <div class="hero-logo">
-                <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Burnishing tool handle -->
-                    <ellipse cx="120" cy="150" rx="35" ry="50" fill="white" opacity="0.95"/>
-                    
-                    <!-- Burnishing tool tip -->
-                    <path d="M 160 150 Q 200 140 220 150 Q 200 160 160 150" fill="white" opacity="0.95"/>
-                    
-                    <!-- Line extending to text -->
-                    <line x1="230" y1="150" x2="380" y2="150" stroke="white" stroke-width="3" opacity="0.95"/>
-                    
-                    <!-- Text: "the burnish co." -->
-                    <text x="400" y="175" font-family="Georgia, serif" font-size="85" font-style="italic" fill="white" opacity="0.95">
-                        the burnish
-                    </text>
-                    <text x="400" y="240" font-family="Georgia, serif" font-size="85" font-style="italic" fill="white" opacity="0.95">
-                        co.
-                    </text>
-                </svg>
-            </div>
+    <svg viewBox="0 0 900 250" xmlns="http://www.w3.org/2000/svg">
+
+        <!-- Burnishing tool -->
+        <g fill="white">
+
+            <!-- Wooden handle -->
+            <path d="
+                M40 145
+                C40 126 65 118 95 120
+                C115 121 130 130 145 130
+                C160 130 175 123 190 123
+                C205 123 215 132 215 145
+                C215 158 205 167 190 167
+                C175 167 160 160 145 160
+                C130 160 115 169 95 170
+                C65 172 40 164 40 145
+                Z"/>
+
+            <!-- Ferrule -->
+            <rect x="213" y="136" width="18" height="18"/>
+
+            <!-- Tool shaft -->
+            <rect x="231" y="143" width="470" height="6"/>
+        </g>
+
+        <!-- Main text -->
+        <text x="120"
+              y="120"
+              fill="white"
+              font-size="92"
+              font-family="Georgia, 'Times New Roman', serif"
+              font-style="italic"
+              letter-spacing="-2">
+            the
+        </text>
+
+        <text x="245"
+              y="120"
+              fill="white"
+              font-size="140"
+              font-family="Georgia, 'Times New Roman', serif"
+              font-style="italic"
+              letter-spacing="-3">
+            burnish
+        </text>
+
+        <!-- co. -->
+        <text x="715"
+              y="178"
+              fill="white"
+              font-size="76"
+              font-family="Georgia, 'Times New Roman', serif"
+              font-style="italic">
+            co.
+        </text>
+
+    </svg>
+</div>
             <p class="hero-tagline">Handcrafted leather goods and fine woodworking for discerning collectors</p>
             <a href="#products" class="cta-button">Explore Our Work</a>
         </div>
