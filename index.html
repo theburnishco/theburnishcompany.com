@@ -127,7 +127,7 @@
                     <h3>Custom Hand‑Stitched Wallets</h3>
                     <p>Personalized wallets handcrafted to your specifications — choice of leather, thread color, stitch style, and initials. Each piece is hand‑cut, hand‑burnished, and stitched with traditional saddle stitching for durability.</p>
                     <p class="price">From $180 — Contact for a quote</p>
-                    <p><a href="#contact" class="cta-link">Request a Custom Wallet</a></p>
+                    <p><a href="#contact" class="cta-link" data-subject="Custom Wallet Request" data-prefill="I'm interested in a Custom Hand‑Stitched Wallet. My preferences:\n- Leather: \n- Thread color: \n- Initials (if any): \nPlease let me know lead time and pricing.">Request a Custom Wallet</a></p>
                 </div>
                 <div class="product-card">
                     <div class="product-image">
@@ -136,7 +136,7 @@
                     <h3>Custom Woodworking</h3>
                     <p>Bespoke woodworking projects tailored to your space and taste. From small heirloom boxes and knife handles to cutting boards, shelves, and furniture — select wood species, dimensions, joinery, and finish.</p>
                     <p class="price">Custom pricing — Contact for an estimate</p>
-                    <p><a href="#contact" class="cta-link">Discuss a Custom Project</a></p>
+                    <p><a href="#contact" class="cta-link" data-subject="Custom Woodworking Request" data-prefill="I'm interested in a custom woodworking project. Project details:\n- Type (e.g., cutting board, shelf, furniture): \n- Wood preference: \n- Approximate dimensions: \nPlease contact me with an estimate.">Discuss a Custom Project</a></p>
                 </div>
                 <div class="product-card">
                     <div class="product-image">
@@ -203,6 +203,7 @@
                     </div>
                 </div>
                 <form class="contact-form">
+                    <input type="hidden" name="subject" id="contact-subject" value="">
                     <input type="text" placeholder="Your Name" required>
                     <input type="email" placeholder="Your Email" required>
                     <textarea placeholder="Your Message" rows="5" required></textarea>
