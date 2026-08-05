@@ -16,31 +16,43 @@ navLinks.forEach(link => {
     });
 });
 
-// Contact Form Submission
+// ===== Contact Form Submission (enhanced to include subject) =====
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
         
         // Get form values
-        const name = contactForm.querySelector('input[type="text"]').value;
-        const email = contactForm.querySelector('input[type="email"]').value;
-        const message = contactForm.querySelector('textarea').value;
+        const name = contactForm.querySelector('input[type="text"]').value.trim();
+        const email = contactForm.querySelector('input[type="email"]').value.trim();
+        const message = contactForm.querySelector('textarea').value.trim();
+        const subjectInput = document.getElementById('contact-subject');
+        const subject = subjectInput ? subjectInput.value.trim() : '';
         
-        // Here you would typically send this to a server
-        console.log('Form submitted:', { name, email, message });
+        // Replace this with your real send logic (POST to API, form handling service, etc.)
+        console.log('Form submitted:', { name, email, subject, message });
         
         // Show success message
-        const originalButtonText = contactForm.querySelector('.submit-button').textContent;
-        contactForm.querySelector('.submit-button').textContent = 'Message Sent! ✓';
+        const submitBtn = contactForm.querySelector('.submit-button');
+        const originalButtonText = submitBtn ? submitBtn.textContent : null;
+        if (submitBtn) submitBtn.textContent = 'Message Sent! ✓';
         
         // Reset form
         contactForm.reset();
         
         // Reset button text after 3 seconds
         setTimeout(() => {
-            contactForm.querySelector('.submit-button').textContent = originalButtonText;
+            if (submitBtn && originalButtonText) submitBtn.textContent = originalButtonText;
         }, 3000);
+
+        // Optional: mailto fallback (uncomment to enable)
+        /*
+        const mailtoBody = encodeURIComponent(
+          `Name: ${name}\nEmail: ${email}\n\n${message}`
+        );
+        const mailtoLink = `mailto:theburnishcompany@gmail.com?subject=${encodeURIComponent(subject || 'Website Inquiry')}&body=${mailtoBody}`;
+        window.location.href = mailtoLink;
+        */
     });
 }
 
@@ -141,5 +153,24 @@ if ('IntersectionObserver' in window) {
     
     document.querySelectorAll('img[data-src]').forEach(img => imageObserver.observe(img));
 }
+
+// ===== Prefill contact form from product CTAs =====
+document.querySelectorAll('.cta-link').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const subject = link.dataset.subject || '';
+    const prefill = link.dataset.prefill || '';
+    const subjectInput = document.getElementById('contact-subject');
+    const messageField = document.querySelector('.contact-form textarea');
+    if (subjectInput) subjectInput.value = subject;
+    if (messageField) {
+      messageField.value = prefill;
+      // delay focus so scroll completes (useful on mobile)
+      setTimeout(() => messageField.focus(), 500);
+    }
+    const target = document.querySelector('#contact');
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
 
 console.log('The Burnish Company - Website loaded successfully!');
