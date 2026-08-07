@@ -1,249 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Burnish Company - Handcrafted Leather & Woodworking</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Burnish Company — Handcrafted Horween Leather & Fine Woodwork</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-wrapper">
-                <div class="logo">
-                    <span>The Burnish Company</span>
-                </div>
-                <ul class="nav-menu">
-                    <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#products" class="nav-link">Products</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav-wrapper">
+        <div class="logo" aria-hidden="true">The Burnish Company</div>
+        <ul class="nav-menu">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#products" class="nav-link">Products</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="home" class="hero" role="banner">
+    <div class="hero-media" aria-hidden="true"></div>
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <h1 class="hero-title">Heirloom Leather & Wood</h1>
+        <p class="hero-lead">Handcrafted from full‑grain Horween veg‑tanned leather and select hardwoods. Built to age beautifully.</p>
+        <div class="hero-cta">
+          <a class="cta-button" href="#products">Shop Collections</a>
+          <a class="ghost-link" href="#about">Our Story</a>
         </div>
-    </nav>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <!-- decorative leather texture shown with CSS background -->
+      </div>
+    </div>
+  </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="hero-logo">
-    <svg viewBox="0 0 900 250" xmlns="http://www.w3.org/2000/svg">
+  <!-- PRODUCTS -->
+  <section id="products" class="products" aria-labelledby="products-heading">
+    <div class="container">
+      <h2 id="products-heading" class="section-title">Collections</h2>
+      <p class="section-sub">Minimal designs. Timeless materials. Made to last.</p>
 
-        <!-- Burnishing tool -->
-        <g fill="white">
-
-            <!-- Wooden handle -->
-            <path d="
-                M40 145
-                C40 126 65 118 95 120
-                C115 121 130 130 145 130
-                C160 130 175 123 190 123
-                C205 123 215 132 215 145
-                C215 158 205 167 190 167
-                C175 167 160 160 145 160
-                C130 160 115 169 95 170
-                C65 172 40 164 40 145
-                Z"/>
-
-            <!-- Ferrule -->
-            <rect x="213" y="136" width="18" height="18"/>
-
-            <!-- Tool shaft -->
-            <rect x="231" y="143" width="470" height="6"/>
-        </g>
-
-        <!-- Main text -->
-        <text x="120"
-              y="120"
-              fill="white"
-              font-size="92"
-              font-family="Georgia, 'Times New Roman', serif"
-              font-style="italic"
-              letter-spacing="-2">
-            the
-        </text>
-
-        <text x="245"
-              y="120"
-              fill="white"
-              font-size="140"
-              font-family="Georgia, 'Times New Roman', serif"
-              font-style="italic"
-              letter-spacing="-3">
-            burnish
-        </text>
-
-        <!-- co. -->
-        <text x="715"
-              y="178"
-              fill="white"
-              font-size="76"
-              font-family="Georgia, 'Times New Roman', serif"
-              font-style="italic">
-            co.
-        </text>
-
-    </svg>
-</div>
-            <p class="hero-tagline">Handcrafted leather goods and fine woodworking for the discerning eye</p>
-            <a href="#products" class="cta-button">Explore Our Work</a>
-        </div>
-        <div class="hero-overlay"></div>
-    </section>
-
-    <!-- Products Section -->
-    <section id="products" class="products">
-        <div class="container">
-            <h2 class="section-title">Our Products</h2>
-            <div class="products-grid">
-                <div class="product-card">
-                    <div class="product-image">
-                        <i class="fas fa-wallet"></i>
-                    </div>
-                    <h3>Leather Wallets</h3>
-                    <p>Hand-stitched wallets crafted from premium full-grain leather with timeless designs and exceptional durability.</p>
-                    <span class="price">Starting at $125</span>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <i class="fas fa-knife"></i>
-                    </div>
-                    <h3>Wooden Cutting Boards</h3>
-                    <p>Handcrafted cutting boards in premium hardwoods, finished with food-safe oils and designed to last generations.</p>
-                    <span class="price">Starting at $150</span>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <i class="fas fa-hand-paper"></i>
-                    </div>
-                    <h3>Custom Hand‑Stitched Wallets</h3>
-                    <p>Personalized wallets handcrafted to your specifications — choice of leather, thread color, stitch style, and initials. Each piece is hand‑cut, hand‑burnished, and stitched with traditional saddle stitching for durability.</p>
-                    <p class="price">From $180 — Contact for a quote</p>
-                    <p><a href="#contact" class="cta-link" data-subject="Custom Wallet Request" data-prefill="I'm interested in a Custom Hand‑Stitched Wallet. My preferences:\n- Leather: \n- Thread color: \n- Initials (if any): \nPlease let me know lead time and pricing.">Request a Custom Wallet</a></p>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <i class="fas fa-hammer"></i>
-                    </div>
-                    <h3>Custom Woodworking</h3>
-                    <p>Bespoke woodworking projects tailored to your space and taste. From small heirloom boxes and knife handles to cutting boards, shelves, and furniture — select wood species, dimensions, joinery, and finish.</p>
-                    <p class="price">Custom pricing — Contact for an estimate</p>
-                    <p><a href="#contact" class="cta-link" data-subject="Custom Woodworking Request" data-prefill="I'm interested in a custom woodworking project. Project details:\n- Type (e.g., cutting board, shelf, furniture): \n- Wood preference: \n- Approximate dimensions: \nPlease contact me with an estimate.">Discuss a Custom Project</a></p>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <h3>Custom Commissions</h3>
-                    <p>Bespoke leather and woodworking projects tailored to your specific vision. Contact us to discuss your dream piece.</p>
-                    <span class="price">Contact for Quote</span>
-                </div>
+      <div class="products-grid">
+        <article class="product-card">
+          <div class="product-thumb" style="background-image:url('https://source.unsplash.com/800x600/?leather,wallet')" role="img" aria-label="Full grain leather wallet"></div>
+          <div class="product-body">
+            <h3>Hand‑Stitched Wallets</h3>
+            <p class="product-meta">Materials: Full‑grain Horween veg‑tanned leather, saddle‑stitched</p>
+            <p class="product-desc">Slim, durable wallets hand‑cut and stitched using traditional techniques. Develop a unique patina over time.</p>
+            <div class="product-actions">
+              <a class="cta-link" href="#contact" data-subject="Custom Wallet Request" data-prefill="I'm interested in a Custom Hand‑Stitched Wallet. My preferences:\n- Leather: \n- Thread color: \n- Initials (if any): \nPlease let me know lead time and pricing.">Request a Custom Wallet</a>
+              <span class="price">From $125</span>
             </div>
-        </div>
-    </section>
+          </div>
+        </article>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>About The Burnish Company</h2>
-                    <p>Founded with a passion for traditional craftsmanship, The Burnish Company specializes in creating heirloom-quality leather goods and fine woodworking pieces. Each item is made with careful attention to detail and a reverence for materials.</p>
-                    <p>Our commitment to quality means every piece is built to last generations, becoming more beautiful with age.</p>
-                    <ul class="features-list">
-                        <li><i class="fas fa-check"></i> 100% Handcrafted</li>
-                        <li><i class="fas fa-check"></i> Premium Materials</li>
-                        <li><i class="fas fa-check"></i> Made in America</li>
-                        <li><i class="fas fa-check"></i> Limited Lifetime Quality Guarantee</li>
-                    </ul>
-                </div>
-                <div class="about-image">
-                    <div class="image-placeholder">
-                        <i class="fas fa-leaf"></i>
-                    </div>
-                </div>
+        <article class="product-card">
+          <div class="product-thumb" style="background-image:url('https://source.unsplash.com/800x600/?wood,cuttingboard')" role="img" aria-label="Handmade wooden cutting board"></div>
+          <div class="product-body">
+            <h3>Woodworking</h3>
+            <p class="product-meta">Materials: Walnut, Maple, Oak — food‑safe finishes available</p>
+            <p class="product-desc">Handmade boards, boxes and small furniture built with attention to joinery and finish. Designed to be used and enjoyed for decades.</p>
+            <div class="product-actions">
+              <a class="cta-link" href="#contact" data-subject="Custom Woodworking Request" data-prefill="I'm interested in a custom woodworking project. Details:\n- Project type: \n- Wood preference: \n- Dimensions: \nPlease contact me with an estimate.">Discuss a Custom Project</a>
+              <span class="price">Custom pricing</span>
             </div>
-        </div>
-    </section>
+          </div>
+        </article>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p><a href="mailto:theburnishcompany@gmail.com">theburnishcompany@gmail.com</a></p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Location</h4>
-                            <p>Handcrafted with care, wherever you are</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <i class="fab fa-instagram"></i>
-                        <div>
-                            <h4>Instagram</h4>
-                            <p><a href="https://instagram.com/theburnishcompany" target="_blank" rel="noopener noreferrer">@theburnishcompany</a></p>
-                        </div>
-                    </div>
-                </div>
-                <form class="contact-form">
-                    <input type="hidden" name="subject" id="contact-subject" value="">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <textarea placeholder="Your Message" rows="5" required></textarea>
-                    <button type="submit" class="submit-button">Send Message</button>
-                </form>
+        <article class="product-card">
+          <div class="product-thumb" style="background-image:url('https://source.unsplash.com/800x600/?leather,craft')" role="img" aria-label="Custom commission leather piece"></div>
+          <div class="product-body">
+            <h3>Commissions</h3>
+            <p class="product-meta">Bespoke leather & woodworking</p>
+            <p class="product-desc">Collaborate with us on a one‑of‑a‑kind piece — from design to finish. Ideal for gifts and heirloom items.</p>
+            <div class="product-actions">
+              <a class="cta-link" href="#contact" data-subject="Custom Commission" data-prefill="I'm interested in a custom commission. Project idea:\n- \nPlease contact me to discuss." >Inquire</a>
+              <span class="price">Contact for quote</span>
             </div>
-        </div>
-    </section>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>The Burnish Company</h4>
-                    <p>Handcrafted leather goods and fine woodworking since 2020.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#products">Products</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Follow Us</h4>
-                    <div class="social-links">
-                        <a href="https://instagram.com/theburnishcompany" title="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                        <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="#" title="Pinterest"><i class="fab fa-pinterest"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 The Burnish Company. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+  <!-- GALLERY -->
+  <section id="gallery" class="gallery">
+    <div class="container">
+      <h2 class="section-title">Craft & Detail</h2>
+      <p class="section-sub">Selected work and materials.</p>
+      <div class="gallery-grid">
+        <a href="https://source.unsplash.com/1600x1200/?horween,leather" class="gallery-item" data-caption="Horween veg‑tanned full‑grain leather" aria-label="Horween leather closeup">
+          <img data-src="https://source.unsplash.com/800x600/?horween,leather" alt="Horween leather texture" loading="lazy">
+        </a>
+        <a href="https://source.unsplash.com/1600x1200/?walnut,wood" class="gallery-item" data-caption="Walnut woodworking detail" aria-label="Walnut wood closeup">
+          <img data-src="https://source.unsplash.com/800x600/?walnut,wood" alt="Walnut wood grain" loading="lazy">
+        </a>
+      </div>
+    </div>
+  </section>
 
-    <script src="script.js"></script>
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-image" aria-hidden="true" style="background-image:url('https://source.unsplash.com/1200x900/?leather,craft')"></div>
+        <div class="about-text">
+          <h2>About The Burnish Company</h2>
+          <p>Founded in 2021, The Burnish Company pairs traditional leathercraft with fine woodworking. All leather products are made from full‑grain Horween veg‑tanned leather and finished by hand. Our pieces are created to grow more beautiful with time.</p>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> 100% Handcrafted</li>
+            <li><i class="fas fa-check"></i> Full‑grain Horween veg‑tanned leather</li>
+            <li><i class="fas fa-check"></i> Premium hardwoods & food‑safe finishes</li>
+            <li><i class="fas fa-check"></i> Made in America</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2 class="section-title">Contact & Custom Orders</h2>
+      <div class="contact-wrapper">
+        <form class="contact-form" aria-label="Contact form">
+          <input type="hidden" name="subject" id="contact-subject" value="">
+          <label class="sr-only" for="name">Your name</label>
+          <input id="name" type="text" name="name" placeholder="Your name" required>
+          <label class="sr-only" for="email">Your email</label>
+          <input id="email" type="email" name="email" placeholder="Your email" required>
+          <label class="sr-only" for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell us about your project" rows="5" required></textarea>
+          <div class="form-row">
+            <button type="submit" class="submit-button">Send Message</button>
+            <button type="button" id="mailto-fallback" class="ghost-button">Email Me</button>
+          </div>
+        </form>
+
+        <div class="contact-info">
+          <div class="info-item"><i class="fas fa-envelope"></i><div><h4>Email</h4><p><a href="mailto:theburnishcompany@gmail.com">theburnishcompany@gmail.com</a></p></div></div>
+          <div class="info-item"><i class="fas fa-map-marker-alt"></i><div><h4>Studio</h4><p>Made in America</p></div></div>
+          <div class="info-item"><i class="fab fa-instagram"></i><div><h4>Instagram</h4><p><a href="https://instagram.com/theburnishcompany" target="_blank" rel="noopener noreferrer">@theburnishcompany</a></p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <h4>The Burnish Company</h4>
+          <p>Handcrafted leather goods and fine woodworking since 2021.</p>
+        </div>
+        <div class="social-links"><a href="https://instagram.com/theburnishcompany" aria-label="Instagram"><i class="fab fa-instagram"></i></a></div>
+      </div>
+      <div class="footer-bottom">&copy; 2026 The Burnish Company. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="lightbox-close" aria-label="Close">×</button>
+    <figure class="lightbox-figure">
+      <img src="" alt="" />
+      <figcaption class="lightbox-caption"></figcaption>
+    </figure>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
