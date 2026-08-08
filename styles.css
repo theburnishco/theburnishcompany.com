@@ -1,90 +1,45 @@
-/* Tannery Row inspired theme with real-texture backgrounds (Unsplash source)
-   Note: Unsplash Source (https://source.unsplash.com) provides royalty-free photos for quick prototyping.
-*/
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap');
-
-:root{
-  --brown-900:#2b160f;
-  --brown-700:#5b3a2a;
-  --tan:#d6b99a;
-  --cream:#f6efe8;
-  --accent:#b56f39;
-  --muted:#a88b75;
-  --white:#ffffff;
-}
-
+/* Base clean styles for The Burnish Company — compact, accessible, and performant */
+:root{--bg:#f7f2ec;--text:#241712;--muted:#7a6659;--accent:#b56f39}
 *{box-sizing:border-box}
-html,body{height:100%}
-body{
-  font-family: 'Lato', sans-serif;
-  background:var(--cream);
-  color:var(--brown-900);
-  line-height:1.5;
-  -webkit-font-smoothing:antialiased;
-  margin:0;
-}
-
-.container{max-width:1200px;margin:0 auto;padding:0 16px}
-
-/* Navigation */
-.navbar{background:linear-gradient(90deg, rgba(43,22,15,0.95), rgba(91,58,42,0.95));color:var(--white);position:fixed;top:0;width:100%;z-index:1000;box-shadow:0 6px 20px rgba(0,0,0,0.18)}
-.nav-wrapper{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
-.logo{font-weight:700;font-family:'Playfair Display',serif;color:var(--cream);letter-spacing:0.2px}
-.nav-menu{display:flex;list-style:none;gap:18px}
-.nav-link{color:var(--cream);text-decoration:none;font-weight:600}
-.nav-link:hover{color:var(--accent)}
-.hamburger{display:none}
-
-/* Hero with leather background - reduced vertical space */
-.hero{margin-top:62px;padding:48px 0;position:relative;color:var(--white);background-color:var(--brown-700);background-image:linear-gradient(rgba(27,13,8,0.55), rgba(27,13,8,0.55)), url('https://source.unsplash.com/1600x900/?leather');background-size:cover;background-position:center;}
-.hero .hero-content{max-width:1100px;margin:0 auto;padding:28px 12px}
-.hero-logo{max-width:700px;margin-bottom:12px}
-.hero-tagline{font-size:18px;opacity:.95;margin-bottom:12px;font-weight:400}
-.cta-button{background:linear-gradient(180deg,var(--accent),#8a4f2b);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;display:inline-block;box-shadow:0 6px 18px rgba(0,0,0,0.24);font-weight:700;border:2px solid rgba(255,255,255,0.05)}
-
-/* Headings */
-h2.section-title{font-family:'Playfair Display',serif;font-size:28px;color:var(--brown-900);margin-bottom:12px}
-
-/* Products - tightened spacing */
-.products{padding:56px 0;background:linear-gradient(180deg,var(--cream),#f3ece2)}
-.products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
-.product-card{background:linear-gradient(180deg,var(--cream),#fff);border-radius:10px;padding:16px;border:1px solid rgba(0,0,0,0.05);box-shadow:0 6px 14px rgba(52,36,28,0.05);transition:transform .25s ease,box-shadow .25s ease}
-.product-card:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(52,36,28,0.1)}
-.product-image i{font-size:30px;color:var(--brown-700)}
-.product-card h3{font-family:'Playfair Display',serif;color:var(--brown-900);margin-top:8px;margin-bottom:6px}
-.product-card p{color:#5b4a41;margin-bottom:8px}
-.price{color:var(--accent);font-weight:700}
-.product-card .cta-link{color:var(--brown-700);text-decoration:underline}
-
-/* About section with wood accent - tightened */
-.about{padding:48px 0;background:#fff}
-.about-content{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
-.about-text h2{margin-bottom:10px}
-.about-image .image-placeholder{width:100%;aspect-ratio:1;background-image:linear-gradient(180deg, rgba(0,0,0,0.03), rgba(0,0,0,0.01)), url('https://source.unsplash.com/800x800/?wood,grain');background-size:cover;border-radius:8px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.2);font-size:48px}
-
+html,body{height:100%;margin:0;font-family: Lato, Arial, sans-serif;color:var(--text);background:var(--bg)}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+/* Nav */
+.nav{background:#fff;border-bottom:1px solid rgba(0,0,0,0.04)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.brand{font-weight:700;font-family:Playfair Display,serif}
+.menu{list-style:none;display:flex;gap:18px;margin:0;padding:0}
+.menu a{text-decoration:none;color:var(--text);font-weight:600}
+/* Hero */
+.hero{padding:36px 0}
+.hero-inner{display:flex;gap:24px;align-items:center}
+.hero-copy{flex:1}
+.hero-image{width:420px;height:260px;background-size:cover;background-position:center;border-radius:6px;box-shadow:0 8px 22px rgba(36,23,18,0.08)}
+.hero h1{font-family:Playfair Display,serif;font-size:34px;margin:0 0 8px}
+.lead{color:var(--muted);margin:0 0 14px}
+.btn{background:var(--text);color:#fff;padding:10px 16px;border-radius:6px;text-decoration:none;font-weight:700}
+/* Sections */
+.section{padding:32px 0}
+.section h2{font-family:Playfair Display,serif;font-size:22px;margin:0 0 6px}
+.muted{color:var(--muted);margin:6px 0 14px}
+.grid{display:grid;gap:18px}
+.products-grid{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:#fff;border-radius:10px;border:1px solid rgba(0,0,0,0.04);overflow:hidden;display:flex;flex-direction:column}
+.thumb{height:160px;background-size:cover;background-position:center}
+.card-body{padding:12px}
+.meta{color:var(--muted);font-size:13px;margin:6px 0}
+.small{font-size:14px;color:var(--muted)}
+.card-foot{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+.link-cta{text-decoration:none;color:var(--accent);font-weight:700}
+.price{color:var(--muted);font-weight:700}
+/* Gallery */
+.gallery-grid{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.gallery-item img{width:100%;height:140px;object-fit:cover;border-radius:8px}
 /* Contact */
-.contact{padding:56px 0;background:linear-gradient(180deg,#fff,#f8f3ec)}
-.contact-wrapper{display:flex;flex-wrap:wrap;gap:20px}
-.contact-info{flex:1 1 320px}
-.contact-form{flex:1 1 360px;display:flex;flex-direction:column;gap:12px}
-.info-item{display:flex;gap:12px;align-items:flex-start}
-.info-item i{color:var(--accent);font-size:18px}
-.info-item h4{margin:0;color:var(--brown-900)}
-.info-item p a{color:var(--brown-700);text-decoration:none}
-.info-item p a:hover{text-decoration:underline}
-.contact-form input,.contact-form textarea{padding:10px;border-radius:8px;border:1px solid #e6ded3;font-size:0.97rem}
-.submit-button{background:var(--brown-900);color:#fff;padding:10px;border-radius:8px;border:none;font-weight:700}
-.submit-button:hover{opacity:0.95}
-
+.contact-grid{display:grid;grid-template-columns:1fr 300px;gap:24px;align-items:start}
+.contact-form input,.contact-form textarea{width:100%;padding:10px;border-radius:6px;border:1px solid rgba(0,0,0,0.06);margin-bottom:10px}
+.form-row{display:flex;gap:8px}
+.ghost{background:transparent;border:1px solid rgba(0,0,0,0.06);padding:8px 12px;border-radius:6px}
 /* Footer */
-.footer{background:linear-gradient(180deg,#efe6dd,#efe7e3);padding:28px 0;border-top:1px solid rgba(0,0,0,0.03)}
-.footer-section h4{font-family:'Playfair Display',serif;color:var(--brown-900)}
-.social-links a{color:var(--brown-900);font-size:1.1rem;margin-right:10px}
-
-/* small stitched border effect for cards */
-.product-card{background-clip:padding-box;position:relative}
-.product-card:after{content:"";position:absolute;inset:0;padding:2px;border-radius:10px;pointer-events:none;background:linear-gradient(90deg,transparent 0,transparent 5px, rgba(181,111,57,0.06) 6px, transparent 6px)}
-
-/* Responsive */
-@media (max-width:900px){.about-content{grid-template-columns:1fr}.nav-menu{display:none}.hamburger{display:flex}}
-@media (max-width:600px){.products-grid{grid-template-columns:1fr}.hero{padding:36px 0}.hero-tagline{text-align:center}}
+.site-footer{padding:18px 0;text-align:center;color:var(--muted);font-size:14px}
+/* small responsive */
+@media(max-width:900px){.hero-inner{flex-direction:column}.hero-image{width:100%;height:220px}.contact-grid{grid-template-columns:1fr}}
