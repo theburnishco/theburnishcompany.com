@@ -10,129 +10,93 @@
 </head>
 <body>
   <header class="site-header">
-    <nav class="nav">
-      <div class="wrap">
-        <a class="brand" href="/" aria-label="The Burnish Company">
-          <!-- Inline SVG logo (uses Italianno if loaded) -->
-          <svg class="logo-svg" viewBox="0 0 760 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Burnish Co. logo">
-            <title>The Burnish Co.</title>
-            <style>
-              .the { font-family: Baskerville, 'Times New Roman', serif; font-style: italic; font-size:70px; }
-              .burnish { font-family: Italianno, 'Brush Script MT', 'URW Chancery L', cursive; font-style: italic; font-size:105px; }
-              .co { font-family: Baskerville, 'Times New Roman', serif; font-style: italic; font-size:62px; }
-              .tool { vector-effect: non-scaling-stroke; }
-            </style>
-            <g fill="currentColor">
-              <text class="the" x="112" y="111">the</text>
-              <text class="burnish" x="225" y="111">burnish</text>
-              <text class="co" x="620" y="143">co.</text>
-              <path class="tool" d="M45 130 C45 112, 68 101, 95 101 C112 101, 127 106, 142 112 L199 112 L199 105 L214 105 L214 119 L199 119 L199 127 L142 127 C127 135, 111 141, 94 141 C67 141, 45 137, 45 130 Z" />
-              <rect class="tool" x="210" y="115" width="285" height="7" rx="2" />
-            </g>
-          </svg>
-        </a>
-        <ul class="menu">
-          <li><a href="#products">Products</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
+    <nav class="nav wrap">
+      <a class="brand" href="/" aria-label="The Burnish Company">
+        <!-- Inline SVG logo (uses Italianno if loaded) -->
+        <svg class="logo-svg" viewBox="0 0 760 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Burnish Co. logo">
+          <title>The Burnish Co.</title>
+          <style>
+            .the { font-family: Baskerville, 'Times New Roman', serif; font-style: italic; font-size:48px; }
+            .burnish { font-family: Italianno, 'Brush Script MT', 'URW Chancery L', cursive; font-style: italic; font-size:72px; }
+            .co { font-family: Baskerville, 'Times New Roman', serif; font-style: italic; font-size:36px; }
+            .tool { vector-effect: non-scaling-stroke; }
+          </style>
+          <g fill="currentColor">
+            <text class="the" x="70" y="90">the</text>
+            <text class="burnish" x="200" y="90">burnish</text>
+            <text class="co" x="540" y="120">co.</text>
+            <path class="tool" d="M45 130 C45 112, 68 101, 95 101 C112 101, 127 106, 142 112 L199 112 L199 105 L214 105 L214 119 L199 119 L199 127 L142 127 C127 135, 111 141, 94 141 C67 141, 45 137, 45 130 Z" />
+            <rect class="tool" x="210" y="115" width="285" height="7" rx="2" />
+          </g>
+        </svg>
+      </a>
+
+      <ul class="menu" aria-hidden="false">
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
   </header>
 
   <main>
-    <header id="home" class="hero">
-      <div class="hero-inner wrap">
-        <div class="hero-copy">
-          <h1>Full‑grain Horween leather. Made to last.</h1>
-          <p class="lead">Handcrafted leather goods and fine woodworking, made in America. Founded 2021.</p>
-          <p><a class="btn" href="#products">View Collections</a></p>
-        </div>
-        <div class="hero-image" role="img" aria-label="Horween veg-tanned leather texture" style="background-image:url('https://source.unsplash.com/1600x900/?horween,leather');"></div>
+    <!-- Compact hero: single screen, minimal height -->
+    <section id="home" class="hero wrap">
+      <div class="hero-copy-compact">
+        <h1>Handcrafted leather & wood — built to age well.</h1>
+        <p class="lead">Full‑grain Horween leather and American hardwoods. Small batches, made to last.</p>
+        <p class="actions"><a class="btn" href="#products">Shop Collections</a> <a class="ghost" href="#contact">Contact</a></p>
       </div>
-    </header>
+      <div class="hero-media-compact" role="img" aria-label="Horween veg-tanned leather texture" style="background-image:url('https://source.unsplash.com/1200x800/?horween,leather');"></div>
+    </section>
 
-    <section id="products" class="section wrap">
+    <!-- Condensed product strip (single row on desktop) -->
+    <section id="products" class="section compact wrap">
       <h2>Collections</h2>
-      <p class="muted">Examples of our materials and offerings.</p>
-      <div class="grid products-grid">
-        <article class="card">
+      <p class="muted">Selected pieces and materials — quick view.</p>
+      <div class="row products-row">
+        <article class="card small">
           <div class="thumb" style="background-image:url('https://source.unsplash.com/800x600/?horween,leather');" aria-hidden="true"></div>
           <div class="card-body">
-            <h3>Hand‑Stitched Wallets</h3>
-            <p class="meta">Materials: Full‑grain Horween veg‑tanned leather, waxed linen thread</p>
-            <p class="small">Slim profiles, saddle‑stitched by hand — designed to patina with use.</p>
-            <div class="card-foot"><a class="link-cta cta-link" href="#contact" data-subject="Custom Wallet Request">Request a Custom Wallet</a><span class="price">From $125</span></div>
+            <h3>Horween Wallets</h3>
+            <p class="small muted">Chromexcel & veg‑tan — hand‑stitching, slim profiles.</p>
           </div>
         </article>
 
-        <article class="card">
-          <div class="thumb" style="background-image:url('https://source.unsplash.com/800x600/?maple,wood');" aria-hidden="true"></div>
-          <div class="card-body">
-            <h3>Maple Woodwork</h3>
-            <p class="meta">Materials: Hard maple, food‑safe oil finish</p>
-            <p class="small">Boards and small objects with fine grain and warm tone.</p>
-            <div class="card-foot"><a class="link-cta cta-link" href="#contact" data-subject="Custom Maple Project">Discuss a Maple Project</a><span class="price">Custom</span></div>
-          </div>
-        </article>
-
-        <article class="card">
+        <article class="card small">
           <div class="thumb" style="background-image:url('https://source.unsplash.com/800x600/?walnut,wood');" aria-hidden="true"></div>
           <div class="card-body">
-            <h3>Walnut & Cherry</h3>
-            <p class="meta">Materials: American walnut, cherry — hand‑rubbed finishes</p>
-            <p class="small">Heirloom pieces with rich tone that deepens over time.</p>
-            <div class="card-foot"><a class="link-cta cta-link" href="#contact" data-subject="Custom Walnut/Cherry Project">Request an Estimate</a><span class="price">Custom</span></div>
+            <h3>Walnut Pieces</h3>
+            <p class="small muted">Furniture & small objects — oil finishes.</p>
+          </div>
+        </article>
+
+        <article class="card small">
+          <div class="thumb" style="background-image:url('https://source.unsplash.com/800x600/?maple,wood');" aria-hidden="true"></div>
+          <div class="card-body">
+            <h3>Maple & Cherry</h3>
+            <p class="small muted">Boards, shelving, and accents that develop warmth.</p>
           </div>
         </article>
       </div>
     </section>
 
-    <section id="gallery" class="section wrap">
-      <h2>Materials & Detail</h2>
-      <p class="muted">Close-up examples: Horween veg‑tan leather, maple, walnut, cherry.</p>
-      <div class="grid gallery-grid">
-        <figure class="gallery-item"><img data-src="https://source.unsplash.com/800x600/?horween,leather" alt="Horween veg-tanned leather closeup" loading="lazy"></figure>
-        <figure class="gallery-item"><img data-src="https://source.unsplash.com/800x600/?maple,wood" alt="Maple wood grain" loading="lazy"></figure>
-        <figure class="gallery-item"><img data-src="https://source.unsplash.com/800x600/?walnut,wood" alt="Walnut wood grain" loading="lazy"></figure>
-        <figure class="gallery-item"><img data-src="https://source.unsplash.com/800x600/?cherry,wood" alt="Cherry wood grain" loading="lazy"></figure>
-      </div>
-    </section>
-
-    <section id="about" class="section wrap">
+    <!-- Short about + CTA -->
+    <section id="about" class="section compact wrap">
       <h2>About</h2>
-      <p>Founded in 2021, we craft small‑batch leather goods and fine woodworking. All leather is full‑grain Horween veg‑tanned — selected for texture and longevity. Our woodworking uses m[...]</p>
+      <p>We combine traditional tannery techniques with contemporary design to make durable, repairable goods. Based in the U.S.; small runs and custom work available.</p>
     </section>
 
-    <section id="contact" class="section wrap">
+    <!-- Minimal contact area -->
+    <section id="contact" class="section compact wrap">
       <h2>Contact</h2>
-      <div class="contact-grid">
-        <form class="contact-form" aria-label="Contact form">
-          <input type="hidden" id="contact-subject" name="subject" value="">
-          <label class="sr-only" for="name">Name</label>
-          <input id="name" name="name" type="text" placeholder="Your name" required>
-          <label class="sr-only" for="email">Email</label>
-          <input id="email" name="email" type="email" placeholder="Your email" required>
-          <label class="sr-only" for="message">Message</label>
-          <textarea id="message" name="message" rows="5" placeholder="Tell us about your project" required></textarea>
-          <div class="form-row">
-            <button type="submit" class="btn">Send</button>
-            <button type="button" id="mailto-fallback" class="ghost">Email instead</button>
-          </div>
-        </form>
-
-        <aside class="contact-info">
-          <p><strong>Email</strong><br><a href="mailto:theburnishcompany@gmail.com">theburnishcompany@gmail.com</a></p>
-          <p><strong>Materials</strong><br>Horween veg‑tan full‑grain leather · Maple · Walnut · Cherry</p>
-          <p><strong>Founded</strong><br>2021</p>
-        </aside>
-      </div>
+      <p class="muted">Questions, custom orders, or commissions — email us and we'll respond within 48 hours.</p>
+      <p><a class="btn" href="mailto:theburnishcompany@gmail.com">Email: theburnishcompany@gmail.com</a></p>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="wrap">© 2026 The Burnish Company — Handcrafted in America</div>
+    <div class="wrap">© 2026 The Burnish Company</div>
   </footer>
 
   <script src="script.js"></script>
