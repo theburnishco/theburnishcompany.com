@@ -1,3 +1,19 @@
+/* — Burnish header adjustments and logo sizing to match reference image — */
+:root { --royal-blue: #05045C; }
+.site-header { background: var(--royal-blue); padding: 56px 0; }
+/* Center logo and keep nav menu accessible to the right */
+.nav.wrap { display:flex; align-items:center; justify-content:center; position:relative; }
+.brand { margin:0; }
+.menu { position:absolute; right:20px; top:50%; transform:translateY(-50%); list-style:none; display:flex; gap:18px; margin:0; padding:0; }
+.menu a { color:#ffffff; text-decoration:none; font-weight:600; }
+/* Logo sizing to match provided reference — wide and prominent */
+.logo-svg { height:140px; width:auto; display:block; color:#ffffff; }
+@media (max-width:900px) {
+  .site-header { padding:28px 0; }
+  .logo-svg { height:92px; }
+  .menu { position:static; transform:none; margin-left:18px; }
+}
+
 /* Base clean styles for The Burnish Company — compact, accessible, and performant */
 :root{--bg:#f7f2ec;--text:#241712;--muted:#7a6659;--accent:#b56f39}
 *{box-sizing:border-box}
