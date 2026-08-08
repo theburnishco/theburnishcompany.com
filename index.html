@@ -5,28 +5,34 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>The Burnish Company — Horween Leather & Fine Woodwork</title>
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <header class="site-header">
     <nav class="nav wrap">
       <a class="brand" href="/" aria-label="The Burnish Company">
-        <!-- Inline SVG logo (uses Italianno if loaded) -->
-        <svg class="logo-svg" viewBox="0 0 760 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Burnish Co. logo">
+        <!-- High-res inline SVG logo with royal blue background and white mark -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 1920" width="2400" height="1920" class="logo-svg" role="img" aria-label="The Burnish Co. logo">
           <title>The Burnish Co.</title>
-          <style>
-            .the { font-family: Baskerville, 'Times New Roman', serif; font-style: italic; font-size:48px; }
-            .burnish { font-family: Italianno, 'Brush Script MT', 'URW Chancery L', cursive; font-style: italic; font-size:72px; }
-            .co { font-family: Baskerville, 'Times New Roman', serif; font-style: italic; font-size:36px; }
-            .tool { vector-effect: non-scaling-stroke; }
-          </style>
-          <g fill="currentColor">
-            <text class="the" x="70" y="90">the</text>
-            <text class="burnish" x="200" y="90">burnish</text>
-            <text class="co" x="540" y="120">co.</text>
-            <path class="tool" d="M45 130 C45 112, 68 101, 95 101 C112 101, 127 106, 142 112 L199 112 L199 105 L214 105 L214 119 L199 119 L199 127 L142 127 C127 135, 111 141, 94 141 C67 141, 45 137, 45 130 Z" />
-            <rect class="tool" x="210" y="115" width="285" height="7" rx="2" />
+
+          <!-- Royal blue background (full svg) -->
+          <rect width="2400" height="1920" fill="#05045C" />
+
+          <!-- White logo group -->
+          <g fill="#FFFFFF">
+            <text x="450" y="1030" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="285" letter-spacing="-12">the</text>
+            <text x="780" y="1030" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="320" letter-spacing="-14">burnish</text>
+            <text x="1900" y="1115" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="210" letter-spacing="-8">co.</text>
+
+            <rect x="760" y="1080" width="1120" height="20" rx="4" />
+
+            <g>
+              <rect x="690" y="1050" width="115" height="80" rx="10" />
+              <rect x="690" y="1075" width="1190" height="28" rx="4" />
+              <ellipse cx="430" cy="1090" rx="170" ry="65" />
+              <rect x="520" y="1055" width="190" height="70" rx="12" />
+              <path d="M 280 1040 C 350 1010, 475 1010, 565 1040 L 565 1140 C 475 1170, 350 1170, 280 1140 Z" />
+            </g>
           </g>
         </svg>
       </a>
