@@ -10,6 +10,9 @@
   --line: rgba(23, 19, 15, 0.14);
   --dark-line: rgba(255, 255, 255, 0.14);
 
+  /* Exact same background for logo and square */
+  --logo-bg: #3d2817;
+
   --serif: "Cormorant Garamond", Georgia, serif;
   --sans: "DM Sans", Arial, sans-serif;
 
@@ -80,13 +83,14 @@ a {
   text-decoration: none;
 }
 
+/* Large logo uses the exact same brown as the square */
 .logo-mark {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   padding: 12px 15px;
-  background: #80583d;
+  background: var(--logo-bg);
   overflow: hidden;
 }
 
@@ -95,11 +99,8 @@ a {
   height: auto;
   display: block;
 
-  /* Turn black logo white */
-  filter: invert(1);
-
-  /* Make the inverted black background disappear */
-  mix-blend-mode: screen;
+  /* Black logo becomes white */
+  filter: brightness(0) invert(1);
 }
 
 .main-navigation {
@@ -195,7 +196,11 @@ p {
   align-items: center;
   overflow: hidden;
   background:
-    radial-gradient(circle at 75% 35%, rgba(128, 88, 61, 0.12), transparent 32%),
+    radial-gradient(
+      circle at 75% 35%,
+      rgba(128, 88, 61, 0.12),
+      transparent 32%
+    ),
     var(--cream);
   padding-top: 94px;
 }
@@ -206,8 +211,15 @@ p {
   opacity: 0.35;
   pointer-events: none;
   background-image:
-    linear-gradient(rgba(75, 48, 35, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(75, 48, 35, 0.025) 1px, transparent 1px);
+    linear-gradient(
+      rgba(75, 48, 35, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(75, 48, 35, 0.025) 1px,
+      transparent 1px
+    );
   background-size: 45px 45px;
 }
 
@@ -291,6 +303,10 @@ p {
   min-height: 520px;
 }
 
+/* ================================
+   LOGO SQUARE
+================================ */
+
 .art-frame {
   position: relative;
   width: min(100%, 500px);
@@ -299,31 +315,31 @@ p {
   align-items: center;
   justify-content: center;
   padding: 45px;
-  background: #fff;
+
+  /* EXACT same color as large logo */
+  background: var(--logo-bg);
+
   border: 1px solid rgba(75, 48, 35, 0.18);
   box-shadow: 30px 35px 80px rgba(45, 28, 20, 0.12);
   transform: rotate(2deg);
+  color: #fff;
 }
 
 .art-frame::before {
   content: "";
   position: absolute;
   inset: 14px;
-  border: 1px solid rgba(75, 48, 35, 0.16);
-}
-
-.art-frame {
-    background-color: #3d2817;
-    color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  pointer-events: none;
 }
 
 .art-frame img {
-    width: 100%;
-    position: relative;
-    z-index: 1;
+  width: 100%;
+  position: relative;
+  z-index: 1;
 
-    /* Turn the logo white */
-    filter: brightness(0) invert(1);
+  /* Turn the logo white */
+  filter: brightness(0) invert(1);
 }
 
 .art-frame h1,
@@ -331,7 +347,7 @@ p {
 .art-frame h3,
 .art-frame p,
 .art-frame span {
-    color: #fff;
+  color: #fff;
 }
 
 .art-caption {
@@ -452,14 +468,30 @@ p {
 
 .collection-leather {
   background:
-    radial-gradient(circle at 70% 35%, rgba(192, 135, 85, 0.45), transparent 30%),
-    linear-gradient(135deg, #6e4630, #2a1b15 75%);
+    radial-gradient(
+      circle at 70% 35%,
+      rgba(192, 135, 85, 0.45),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #6e4630,
+      #2a1b15 75%
+    );
 }
 
 .collection-wood {
   background:
-    radial-gradient(circle at 35% 30%, rgba(169, 117, 66, 0.38), transparent 28%),
-    linear-gradient(135deg, #55402f, #201813 75%);
+    radial-gradient(
+      circle at 35% 30%,
+      rgba(169, 117, 66, 0.38),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #55402f,
+      #201813 75%
+    );
 }
 
 .collection-card::before {
@@ -749,7 +781,7 @@ p {
 
 .footer-logo {
   width: 160px;
-  filter: invert(1);
+  filter: brightness(0) invert(1);
   opacity: 0.9;
 }
 
@@ -778,7 +810,7 @@ p {
   display: flex;
   justify-content: space-between;
   padding-top: 25px;
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   font-size: 10px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -975,7 +1007,4 @@ p {
   .email-link {
     font-size: 21px;
   }
-}
-.hero-logo {
-  background-color: #3d2817;
 }
