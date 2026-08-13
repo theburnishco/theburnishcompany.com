@@ -74,6 +74,23 @@ a {
   justify-content: space-between;
 }
 
+.brand {
+  width: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  background: var(--leather);
+  text-decoration: none;
+}
+
+.logo-image {
+  width: 100%;
+  height: auto;
+  mix-blend-mode: normal;
+  filter: brightness(0) invert(1);
+
+}
 between;
 }
 
