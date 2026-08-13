@@ -76,25 +76,14 @@ a {
 
 .brand {
   width: 190px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 16px;
-  background: var(--leather);
-  text-decoration: none;
+  display: block;
 }
 
 .logo-image {
-  width: 100%;
+  width: 190px;
   height: auto;
-  mix-blend-mode: normal;
-  filter: brightness(0) invert(1);
-
+  mix-blend-mode: multiply;
 }
-between;
-}
-
-
 
 .main-navigation {
   display: flex;
