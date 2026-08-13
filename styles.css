@@ -77,12 +77,29 @@ a {
 .brand {
   width: 190px;
   display: block;
+  text-decoration: none;
+}
+
+.logo-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px 15px;
+  background: #80583d;
+  overflow: hidden;
 }
 
 .logo-image {
-  width: 190px;
+  width: 100%;
   height: auto;
-  mix-blend-mode: multiply;
+  display: block;
+
+  /* Turn black logo white */
+  filter: invert(1);
+
+  /* Make the inverted black background disappear */
+  mix-blend-mode: screen;
 }
 
 .main-navigation {
