@@ -10,8 +10,8 @@
   --line: rgba(23, 19, 15, 0.14);
   --dark-line: rgba(255, 255, 255, 0.14);
 
-  /* Logo brown */
-  --logo-bg: rgba(61, 40, 23, 0.92);
+  /* Exact same background for logo and square */
+  --logo-bg: #3d2817;
 
   --serif: "Cormorant Garamond", Georgia, serif;
   --sans: "DM Sans", Arial, sans-serif;
@@ -83,21 +83,14 @@ a {
   text-decoration: none;
 }
 
-
-/* ================================
-   HEADER LOGO
-================================ */
-
+/* Large logo uses the exact same brown as the square */
 .logo-mark {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   padding: 12px 15px;
-
-  /* Brown transparency behind white logo */
   background: var(--logo-bg);
-
   overflow: hidden;
 }
 
@@ -105,12 +98,10 @@ a {
   width: 100%;
   height: auto;
   display: block;
+
+  /* Black logo becomes white */
+  filter: brightness(0) invert(1);
 }
-
-
-/* ================================
-   NAVIGATION
-================================ */
 
 .main-navigation {
   display: flex;
@@ -304,11 +295,6 @@ p {
   margin-left: 14px;
 }
 
-
-/* ================================
-   HERO ART / LARGE LOGO
-================================ */
-
 .hero-art {
   position: relative;
   display: flex;
@@ -316,6 +302,11 @@ p {
   justify-content: center;
   min-height: 520px;
 }
+
+
+/* ================================
+   LOGO SQUARE
+================================ */
 
 .art-frame {
   position: relative;
@@ -325,11 +316,8 @@ p {
   align-items: center;
   justify-content: center;
   padding: 45px;
-
-  /* Same brown transparency as header logo */
   background: var(--logo-bg);
-
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(75, 48, 35, 0.18);
   box-shadow: 30px 35px 80px rgba(45, 28, 20, 0.12);
   transform: rotate(2deg);
   color: #fff;
@@ -345,10 +333,11 @@ p {
 
 .art-frame img {
   width: 100%;
-  height: auto;
   position: relative;
   z-index: 1;
-  display: block;
+
+  /* Turn the logo white */
+  filter: brightness(0) invert(1);
 }
 
 .art-frame h1,
@@ -790,6 +779,7 @@ p {
 
 .footer-logo {
   width: 160px;
+  filter: brightness(0) invert(1);
   opacity: 0.9;
 }
 
