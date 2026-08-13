@@ -98,9 +98,6 @@ a {
   width: 100%;
   height: auto;
   display: block;
-
-  /* Black logo becomes white */
-  filter: brightness(0) invert(1);
 }
 
 .main-navigation {
@@ -337,9 +334,6 @@ p {
   width: 100%;
   position: relative;
   z-index: 1;
-
-  /* Turn the logo white */
-  filter: brightness(0) invert(1);
 }
 
 .art-frame h1,
