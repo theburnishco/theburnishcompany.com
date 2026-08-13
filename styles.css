@@ -312,14 +312,26 @@ p {
   border: 1px solid rgba(75, 48, 35, 0.16);
 }
 
+.art-frame {
+    background-color: #3d2817;
+    color: #fff;
+}
+
 .art-frame img {
     width: 100%;
     position: relative;
     z-index: 1;
-    mix-blend-mode: multiply;
 
-    /* Burnish Company brown */
-    filter: sepia(1) saturate(2.5) hue-rotate(345deg);
+    /* Turn the logo white */
+    filter: brightness(0) invert(1);
+}
+
+.art-frame h1,
+.art-frame h2,
+.art-frame h3,
+.art-frame p,
+.art-frame span {
+    color: #fff;
 }
 
 .art-caption {
