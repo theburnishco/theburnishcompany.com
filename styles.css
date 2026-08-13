@@ -6,11 +6,16 @@
 .brand { margin:0; }
 .menu { position:absolute; right:20px; top:50%; transform:translateY(-50%); list-style:none; display:flex; gap:18px; margin:0; padding:0; }
 .menu a { color:#ffffff; text-decoration:none; font-weight:600; }
-/* Logo sizing to match provided reference — wide and prominent */
-.logo-svg { height:140px; width:auto; display:block; color:#ffffff; }
+/* Logo sizing with proper aspect ratio handling */
+.logo-svg { 
+  height: 140px; 
+  width: auto; 
+  max-width: 100%; 
+  display: block;
+}
 @media (max-width:900px) {
   .site-header { padding:28px 0; }
-  .logo-svg { height:92px; }
+  .logo-svg { height:92px; max-width: 100%; }
   .menu { position:static; transform:none; margin-left:18px; }
 }
 
