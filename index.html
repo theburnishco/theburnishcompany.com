@@ -2,143 +2,377 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>The Burnish Company — Horween Leather & Fine Woodwork</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
-  <header class="site-header">
-    <nav class="nav wrap">
-      <a class="brand" href="/" aria-label="The Burnish Company">
-  <img
-    class="logo-image"
-    src="main/IMG_9053.jpg"
-    alt="The Burnish Co."
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>The Burnish Company | Handcrafted Leather & Fine Woodwork</title>
+  <meta
+    name="description"
+    content="The Burnish Company creates handcrafted leather goods and fine woodworking pieces designed to be used, loved, and passed down."
   >
-</a>
-          <title>The Burnish Co.</title>
 
-          <!-- Burnishing tool handle (left side) -->
-          <ellipse cx="35" cy="90" rx="18" ry="28" fill="#000" />
-          <path d="M 35 62 C 28 50, 15 45, 8 48 C 2 51, 2 130, 8 133 C 15 136, 28 131, 35 118" fill="#000" />
-          
-          <!-- Transition to line -->
-          <rect x="30" y="78" width="25" height="24" fill="#000" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
 
-          <!-- Main horizontal line -->
-          <line x1="60" y1="90" x2="600" y2="90" stroke="#000" stroke-width="3" stroke-linecap="round" />
+  <link rel="stylesheet" href="styles.css">
+</head>
 
-          <!-- "the" text -->
-          <text
-            x="75"
-            y="70"
-            fill="#000"
-            font-family="Georgia, 'Times New Roman', serif"
-            font-size="56"
-            font-style="italic"
-            font-weight="400"
-            letter-spacing="-2"
-          >
-            the
-          </text>
+<body>
 
-          <!-- "burnish" text (italicized) -->
-          <text
-            x="200"
-            y="75"
-            fill="#000"
-            font-family="Georgia, 'Times New Roman', serif"
-            font-size="68"
-            font-style="italic"
-            font-weight="400"
-            letter-spacing="-3"
-          >
-            burnish
-          </text>
+  <header class="site-header" id="top">
+    <div class="nav wrap">
 
-          <!-- "co." text -->
-          <text
-            x="555"
-            y="105"
-            fill="#000"
-            font-family="Georgia, 'Times New Roman', serif"
-            font-size="48"
-            font-style="italic"
-            font-weight="400"
-            letter-spacing="-1"
-          >
-            co.
-          </text>
-        </svg>
+      <a class="brand" href="#top" aria-label="The Burnish Company home">
+        <img
+          src="IMG_9053.jpeg"
+          alt="The Burnish Company"
+          class="logo-image"
+        >
       </a>
 
-      <ul class="menu" aria-hidden="false">
-        <li><a href="#products">Products</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+      <button
+        class="menu-toggle"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav id="main-navigation" class="main-navigation">
+        <a href="#collections">Collections</a>
+        <a href="#philosophy">Our Philosophy</a>
+        <a href="#craft">Craft</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+    </div>
   </header>
 
   <main>
-    <!-- Compact hero: single screen, minimal height -->
-    <section id="home" class="hero wrap">
-      <div class="hero-copy-compact">
-        <h1>Handcrafted leather & wood — built to age well.</h1>
-        <p class="lead">Full‑grain Horween leather and American hardwoods. Small batches, made to last.</p>
-        <p class="actions"><a class="btn" href="#products">Shop Collections</a> <a class="ghost" href="#contact">Contact</a></p>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-texture"></div>
+
+      <div class="wrap hero-grid">
+
+        <div class="hero-copy">
+          <p class="eyebrow">HANDCRAFTED • TIMELESS • AMERICAN MADE</p>
+
+          <h1>
+            Made to be
+            <em>kept.</em>
+          </h1>
+
+          <p class="hero-description">
+            Thoughtfully crafted leather goods and fine woodwork,
+            made in small quantities for people who appreciate
+            the beauty of things built to last.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#collections" class="button button-primary">
+              Explore the Collection
+            </a>
+
+            <a href="#philosophy" class="text-link">
+              Discover our story <span>→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-frame">
+            <img src="IMG_9053.jpeg" alt="">
+          </div>
+
+          <div class="art-caption">
+            <span>THE BURNISH CO.</span>
+            <span>EST. 2026</span>
+          </div>
+        </div>
+
       </div>
-      <div class="hero-media-compact" role="img" aria-label="Horween veg-tanned leather texture" style="background-image:url('https://source.unsplash.com/1200x800/?horween,leather');"></div>
-    </section>
 
-    <!-- Condensed product strip (single row on desktop) -->
-    <section id="products" class="section compact wrap">
-      <h2>Collections</h2>
-      <p class="muted">Selected pieces and materials — quick view.</p>
-      <div class="row products-row">
-        <article class="card small">
-          <div class="thumb" style="background-image:url('https://source.unsplash.com/800x600/?horween,leather');" aria-hidden="true"></div>
-          <div class="card-body">
-            <h3>Horween Wallets</h3>
-            <p class="small muted">Chromexcel & veg‑tan — hand‑stitching, slim profiles.</p>
-          </div>
-        </article>
-
-        <article class="card small">
-          <div class="thumb" style="background-image:url('https://source.unsplash.com/800x600/?walnut,wood');" aria-hidden="true"></div>
-          <div class="card-body">
-            <h3>Walnut Pieces</h3>
-            <p class="small muted">Furniture & small objects — oil finishes.</p>
-          </div>
-        </article>
-
-        <article class="card small">
-          <div class="thumb" style="background-image:url('https://source.unsplash.com/800x600/?maple,wood');" aria-hidden="true"></div>
-          <div class="card-body">
-            <h3>Maple & Cherry</h3>
-            <p class="small muted">Boards, shelving, and accents that develop warmth.</p>
-          </div>
-        </article>
+      <div class="hero-bottom wrap">
+        <span>Leather</span>
+        <span>Wood</span>
+        <span>Craft</span>
+        <span>Character</span>
       </div>
     </section>
 
-    <!-- Short about + CTA -->
-    <section id="about" class="section compact wrap">
-      <h2>About</h2>
-      <p>We combine traditional tannery techniques with contemporary design to make durable, repairable goods. Based in the U.S.; small runs and custom work available.</p>
+
+    <!-- INTRO -->
+    <section class="intro section">
+      <div class="wrap intro-grid">
+
+        <div>
+          <p class="eyebrow">THE ART OF THE OBJECT</p>
+          <h2>
+            Good things get better
+            <em>with time.</em>
+          </h2>
+        </div>
+
+        <div class="intro-copy">
+          <p>
+            We believe the best objects aren't made to be replaced.
+            They're made to become part of your life.
+          </p>
+
+          <p>
+            From full-grain leather to carefully selected hardwoods,
+            every Burnish piece is made with an appreciation for
+            honest materials, traditional techniques, and thoughtful design.
+          </p>
+        </div>
+
+      </div>
     </section>
 
-    <!-- Minimal contact area -->
-    <section id="contact" class="section compact wrap">
-      <h2>Contact</h2>
-      <p class="muted">Questions, custom orders, or commissions — email us and we'll respond within 48 hours.</p>
-      <p><a class="btn" href="mailto:theburnishcompany@gmail.com">Email: theburnishcompany@gmail.com</a></p>
+
+    <!-- COLLECTIONS -->
+    <section id="collections" class="collections section-dark">
+      <div class="wrap">
+
+        <div class="section-heading light">
+          <div>
+            <p class="eyebrow">THE COLLECTION</p>
+            <h2>Objects with <em>character.</em></h2>
+          </div>
+
+          <p>
+            A considered selection of leather and woodwork,
+            made in small runs and available for custom work.
+          </p>
+        </div>
+
+        <div class="collection-grid">
+
+          <article class="collection-card collection-leather">
+            <div class="collection-overlay"></div>
+
+            <div class="collection-content">
+              <span class="collection-number">01</span>
+              <div>
+                <p class="card-label">LEATHER GOODS</p>
+                <h3>Made for the everyday.</h3>
+                <p>
+                  Full-grain leather, traditional construction,
+                  and details that become more beautiful with use.
+                </p>
+                <a href="#contact" class="light-link">
+                  Enquire about leather goods <span>→</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="collection-card collection-wood">
+            <div class="collection-overlay"></div>
+
+            <div class="collection-content">
+              <span class="collection-number">02</span>
+              <div>
+                <p class="card-label">FINE WOODWORK</p>
+                <h3>Built around the grain.</h3>
+                <p>
+                  American hardwoods shaped into useful,
+                  enduring pieces with a natural sense of warmth.
+                </p>
+                <a href="#contact" class="light-link">
+                  Enquire about woodwork <span>→</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
     </section>
+
+
+    <!-- PHILOSOPHY -->
+    <section id="philosophy" class="philosophy section">
+      <div class="wrap philosophy-grid">
+
+        <div class="philosophy-mark">
+          <span>THE</span>
+          <strong>B</strong>
+          <span>CO.</span>
+        </div>
+
+        <div class="philosophy-copy">
+          <p class="eyebrow">OUR PHILOSOPHY</p>
+
+          <h2>
+            Less, but
+            <em>better.</em>
+          </h2>
+
+          <p class="large-copy">
+            We're interested in the things that don't need explaining:
+            beautiful materials, careful construction, and objects that
+            feel better the longer you own them.
+          </p>
+
+          <div class="values">
+
+            <div class="value">
+              <span>01</span>
+              <div>
+                <h3>Honest Materials</h3>
+                <p>
+                  We let leather and wood speak for themselves,
+                  choosing materials for their character and longevity.
+                </p>
+              </div>
+            </div>
+
+            <div class="value">
+              <span>02</span>
+              <div>
+                <h3>Thoughtful Craft</h3>
+                <p>
+                  Traditional techniques meet modern, purposeful design.
+                  Nothing is added simply for decoration.
+                </p>
+              </div>
+            </div>
+
+            <div class="value">
+              <span>03</span>
+              <div>
+                <h3>Made to Last</h3>
+                <p>
+                  Our goal isn't to make something disposable.
+                  It's to make something worth keeping.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CRAFT -->
+    <section id="craft" class="craft section-dark">
+      <div class="wrap craft-grid">
+
+        <div class="craft-copy">
+          <p class="eyebrow">THE DETAILS MATTER</p>
+
+          <h2>
+            Built by hand.
+            <em>Finished with intention.</em>
+          </h2>
+
+          <p>
+            Every piece carries the subtle marks of the maker.
+            That's the point.
+          </p>
+
+          <p>
+            We embrace natural variation, hand-finished edges,
+            visible grain, and the small imperfections that make
+            a handmade object unmistakably its own.
+          </p>
+        </div>
+
+        <div class="craft-stamp">
+          <div class="stamp-inner">
+            <span>HAND</span>
+            <strong>CRAFTED</strong>
+            <span>WITH PURPOSE</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact section">
+      <div class="wrap contact-grid">
+
+        <div>
+          <p class="eyebrow">START A CONVERSATION</p>
+
+          <h2>
+            Have something
+            <em>in mind?</em>
+          </h2>
+
+          <p class="contact-copy">
+            Whether you're looking for a piece from our collection,
+            a custom project, or simply want to learn more,
+            we'd love to hear from you.
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <span class="card-label">GET IN TOUCH</span>
+
+          <a
+            href="mailto:theburnishcompany@gmail.com"
+            class="email-link"
+          >
+            theburnishcompany@gmail.com
+          </a>
+
+          <p>
+            Custom orders and commissions welcome.
+          </p>
+
+          <a
+            href="mailto:theburnishcompany@gmail.com?subject=The%20Burnish%20Company%20Inquiry"
+            class="button button-primary"
+          >
+            Send an Inquiry
+          </a>
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
+
   <footer class="site-footer">
-    <div class="wrap">© 2026 The Burnish Company</div>
+    <div class="wrap footer-grid">
+
+      <div>
+        <img
+          src="IMG_9053.jpeg"
+          alt="The Burnish Company"
+          class="footer-logo"
+        >
+        <p>Handcrafted leather & fine woodwork.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#collections">Collections</a>
+        <a href="#philosophy">Philosophy</a>
+        <a href="#craft">Craft</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-meta">
+        <span>© 2026 The Burnish Company</span>
+        <span>Made to be kept.</span>
+      </div>
+
+    </div>
   </footer>
 
   <script src="script.js"></script>
