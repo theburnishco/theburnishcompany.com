@@ -1369,3 +1369,16 @@ p {
     font-size: 21px;
   }
 }
+.logo-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: none;
+  mix-blend-mode: normal;
+}
+.art-frame img {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  filter: none;
+}
