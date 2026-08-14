@@ -1369,16 +1369,51 @@ p {
     font-size: 21px;
   }
 }
-.logo-image {
+ */
+
+:root {
+  --logo-brown: #3d2817;
+  --logo-white: #ffffff;
+}
+
+/* HEADER LOGO */
+.logo-mark {
+  background: var(--logo-brown);
+  padding: 12px 15px;
+  overflow: hidden;
+}
+
+.logo-mark .logo-image {
+  display: block;
   width: 100%;
   height: auto;
-  display: block;
-  filter: none;
-  mix-blend-mode: normal;
+  filter: brightness(0) invert(1);
 }
+
+/* LARGE HERO LOGO */
+.art-frame {
+  background: var(--logo-brown);
+}
+
 .art-frame img {
-  width: 100%;
-  position: relative;
-  z-index: 1;
-  filter: none;
+  filter: brightness(0) invert(1);
+}
+
+/* FOOTER LOGO */
+.footer-logo {
+  display: block;
+  width: 160px;
+  height: auto;
+  padding: 12px 15px;
+  background: var(--logo-brown);
+  filter: brightness(0) invert(1);
+  opacity: 1;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .footer-logo {
+    width: 150px;
+    padding: 10px 12px;
+  }
 }
