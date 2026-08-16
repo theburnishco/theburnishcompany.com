@@ -5,6 +5,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const visualFixes = document.createElement("style");
   visualFixes.textContent = `
+    /* More breathing room where major background colors change */
+    .section-dark,
+    .craft,
+    .contact {
+      margin-top: 28px !important;
+      margin-bottom: 28px !important;
+    }
+
+    /* Remove the grey divider directly beneath the header */
+    .site-header {
+      border-bottom: none !important;
+      box-shadow: none;
+    }
+
+    /* Leather gallery: large standalone square photos */
     .collection-leather { min-height: 780px !important; overflow: hidden !important; }
     .leather-photo-gallery { position: absolute !important; top: 34px !important; left: 34px !important; right: 34px !important; height: 390px !important; display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 22px !important; z-index: 3 !important; }
     .leather-photo-frame { width: 100% !important; height: 390px !important; aspect-ratio: 1 / 1 !important; display: flex !important; align-items: center !important; justify-content: center !important; overflow: hidden !important; background: #17100c !important; border: 1px solid rgba(255,255,255,.2) !important; box-shadow: 0 18px 40px rgba(0,0,0,.28) !important; }
@@ -27,6 +42,9 @@ document.addEventListener("DOMContentLoaded", () => {
       .leather-photo-frame { height: 350px !important; }
     }
     @media (max-width: 600px) {
+      .section-dark,
+      .craft,
+      .contact { margin-top: 20px !important; margin-bottom: 20px !important; }
       .collection-leather { min-height: 920px !important; }
       .leather-photo-gallery { top: 25px !important; left: 25px !important; right: 25px !important; height: auto !important; grid-template-columns: 1fr !important; gap: 18px !important; }
       .leather-photo-frame { width: 100% !important; height: auto !important; aspect-ratio: 1 / 1 !important; }
