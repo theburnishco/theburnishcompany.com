@@ -67,6 +67,45 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // Add the leather wallet photos already stored in the repository.
+  const leatherCard = document.querySelector(".collection-leather");
+
+  if (leatherCard) {
+    const photoGallery = document.createElement("div");
+    photoGallery.setAttribute("aria-label", "Leather wallet photos");
+    photoGallery.style.cssText = [
+      "position:absolute",
+      "inset:28px 28px auto",
+      "height:300px",
+      "display:grid",
+      "grid-template-columns:1fr 1fr",
+      "gap:12px",
+      "z-index:1",
+      "overflow:hidden"
+    ].join(";");
+
+    [
+      ["IMG_3722.jpeg", "Handcrafted leather wallet"],
+      ["IMG_3723.jpeg", "Handcrafted leather wallet detail"]
+    ].forEach(([src, alt]) => {
+      const img = document.createElement("img");
+      img.src = src;
+      img.alt = alt;
+      img.loading = "lazy";
+      img.style.cssText = [
+        "width:100%",
+        "height:100%",
+        "object-fit:cover",
+        "display:block",
+        "border:1px solid rgba(255,255,255,.16)",
+        "box-shadow:0 12px 30px rgba(0,0,0,.22)"
+      ].join(";");
+      photoGallery.appendChild(img);
+    });
+
+    leatherCard.prepend(photoGallery);
+  }
+
   // Subtle reveal animations
   const revealItems = document.querySelectorAll(
     ".intro-grid, .collection-card, .value, .craft-grid, .contact-grid"
