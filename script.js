@@ -7,13 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
   if (menuToggle && navigation) {
     menuToggle.addEventListener("click", () => {
       const isOpen = navigation.classList.toggle("open");
-
       menuToggle.classList.toggle("active", isOpen);
       menuToggle.setAttribute("aria-expanded", String(isOpen));
-      menuToggle.setAttribute(
-        "aria-label",
-        isOpen ? "Close navigation" : "Open navigation"
-      );
+      menuToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
     });
 
     navigation.querySelectorAll("a").forEach((link) => {
@@ -29,12 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Header shadow while scrolling
   const updateHeader = () => {
     if (!header) return;
-
-    if (window.scrollY > 20) {
-      header.style.boxShadow = "0 12px 35px rgba(23, 19, 15, 0.08)";
-    } else {
-      header.style.boxShadow = "none";
-    }
+    header.style.boxShadow = window.scrollY > 20
+      ? "0 12px 35px rgba(23, 19, 15, 0.08)"
+      : "none";
   };
 
   window.addEventListener("scroll", updateHeader, { passive: true });
@@ -44,78 +37,36 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener("click", (event) => {
       const targetId = link.getAttribute("href");
-
       if (!targetId || targetId === "#") return;
-
       const target = document.querySelector(targetId);
-
       if (!target) return;
 
       event.preventDefault();
-
       const headerHeight = header ? header.offsetHeight : 0;
-      const targetPosition =
-        target.getBoundingClientRect().top +
-        window.scrollY -
-        headerHeight -
-        20;
-
-      window.scrollTo({
-        top: targetPosition,
-        behavior: "smooth"
-      });
+      const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight - 20;
+      window.scrollTo({ top: targetPosition, behavior: "smooth" });
     });
   });
 
-  // Leather wallet photo gallery — show the entire photos without cropping.
+  // Leather wallet gallery — large, separate square frames with no cropping.
   const leatherCard = document.querySelector(".collection-leather");
 
   if (leatherCard) {
     const photoGallery = document.createElement("div");
+    photoGallery.className = "leather-photo-gallery";
     photoGallery.setAttribute("aria-label", "Leather wallet photos");
-    photoGallery.style.cssText = [
-      "position:absolute",
-      "top:24px",
-      "left:24px",
-      "right:24px",
-      "height:330px",
-      "display:grid",
-      "grid-template-columns:1fr 1fr",
-      "align-items:center",
-      "gap:14px",
-      "z-index:3",
-      "overflow:visible"
-    ].join(";");
 
     [
       ["IMG_3722.jpeg", "Handcrafted leather wallet"],
       ["IMG_3723.jpeg", "Handcrafted leather wallet detail"]
     ].forEach(([src, alt]) => {
       const frame = document.createElement("div");
-      frame.style.cssText = [
-        "width:100%",
-        "height:100%",
-        "display:flex",
-        "align-items:center",
-        "justify-content:center",
-        "overflow:hidden",
-        "background:rgba(20,12,8,.35)",
-        "border:1px solid rgba(255,255,255,.16)",
-        "box-shadow:0 12px 30px rgba(0,0,0,.22)",
-        "border-radius:2px"
-      ].join(";");
+      frame.className = "leather-photo-frame";
 
       const img = document.createElement("img");
       img.src = src;
       img.alt = alt;
       img.loading = "lazy";
-      img.style.cssText = [
-        "width:100%",
-        "height:100%",
-        "object-fit:contain",
-        "object-position:center",
-        "display:block"
-      ].join(";");
 
       frame.appendChild(img);
       photoGallery.appendChild(frame);
@@ -134,15 +85,11 @@ document.addEventListener("DOMContentLoaded", () => {
       (entries, observerInstance) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
-
           entry.target.classList.add("is-visible");
           observerInstance.unobserve(entry.target);
         });
       },
-      {
-        threshold: 0.12,
-        rootMargin: "0px 0px -50px 0px"
-      }
+      { threshold: 0.12, rootMargin: "0px 0px -50px 0px" }
     );
 
     revealItems.forEach((item) => {
