@@ -3,6 +3,126 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.querySelector(".menu-toggle");
   const navigation = document.querySelector(".main-navigation");
 
+  // Visual fixes for the collection photos and brand logos.
+  const visualFixes = document.createElement("style");
+  visualFixes.textContent = `
+    /* Leather gallery: large standalone square photos */
+    .collection-leather {
+      min-height: 780px !important;
+      overflow: hidden !important;
+    }
+
+    .leather-photo-gallery {
+      position: absolute !important;
+      top: 34px !important;
+      left: 34px !important;
+      right: 34px !important;
+      height: 390px !important;
+      display: grid !important;
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      gap: 22px !important;
+      z-index: 3 !important;
+    }
+
+    .leather-photo-frame {
+      width: 100% !important;
+      height: 390px !important;
+      aspect-ratio: 1 / 1 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      overflow: hidden !important;
+      background: #17100c !important;
+      border: 1px solid rgba(255,255,255,.2) !important;
+      box-shadow: 0 18px 40px rgba(0,0,0,.28) !important;
+    }
+
+    .leather-photo-frame img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: contain !important;
+      object-position: center !important;
+      display: block !important;
+    }
+
+    .collection-leather .collection-overlay {
+      z-index: 1 !important;
+      background: linear-gradient(to top, rgba(15,10,7,.96), rgba(15,10,7,.08) 68%) !important;
+    }
+
+    .collection-leather .collection-content {
+      z-index: 5 !important;
+      inset: auto 45px 42px !important;
+    }
+
+    .collection-leather .collection-number {
+      margin-bottom: 18px !important;
+    }
+
+    /* Header logo: clean black-and-white treatment */
+    .logo-mark {
+      background: #000 !important;
+      padding: 12px 15px !important;
+    }
+
+    .logo-mark .logo-image {
+      filter: brightness(0) invert(1) !important;
+    }
+
+    /* Footer logo: same black-and-white treatment */
+    .footer-logo {
+      background: #000 !important;
+      padding: 12px 15px !important;
+      filter: brightness(0) invert(1) !important;
+      opacity: 1 !important;
+    }
+
+    @media (max-width: 900px) {
+      .collection-leather {
+        min-height: 760px !important;
+      }
+
+      .leather-photo-gallery {
+        top: 28px !important;
+        left: 28px !important;
+        right: 28px !important;
+        height: 350px !important;
+        gap: 16px !important;
+      }
+
+      .leather-photo-frame {
+        height: 350px !important;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .collection-leather {
+        min-height: 920px !important;
+      }
+
+      .leather-photo-gallery {
+        top: 25px !important;
+        left: 25px !important;
+        right: 25px !important;
+        height: auto !important;
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 18px !important;
+      }
+
+      .leather-photo-frame {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 1 / 1 !important;
+      }
+
+      .collection-leather .collection-content {
+        inset: auto 25px 28px !important;
+      }
+    }
+  `;
+  document.head.appendChild(visualFixes);
+
   // Mobile navigation
   if (menuToggle && navigation) {
     menuToggle.addEventListener("click", () => {
