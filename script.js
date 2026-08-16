@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Add the leather wallet photos already stored in the repository.
+  // Leather wallet photo gallery — show the entire photos without cropping.
   const leatherCard = document.querySelector(".collection-leather");
 
   if (leatherCard) {
@@ -75,19 +75,36 @@ document.addEventListener("DOMContentLoaded", () => {
     photoGallery.setAttribute("aria-label", "Leather wallet photos");
     photoGallery.style.cssText = [
       "position:absolute",
-      "inset:28px 28px auto",
-      "height:300px",
+      "top:24px",
+      "left:24px",
+      "right:24px",
+      "height:330px",
       "display:grid",
       "grid-template-columns:1fr 1fr",
-      "gap:12px",
-      "z-index:1",
-      "overflow:hidden"
+      "align-items:center",
+      "gap:14px",
+      "z-index:3",
+      "overflow:visible"
     ].join(";");
 
     [
       ["IMG_3722.jpeg", "Handcrafted leather wallet"],
       ["IMG_3723.jpeg", "Handcrafted leather wallet detail"]
     ].forEach(([src, alt]) => {
+      const frame = document.createElement("div");
+      frame.style.cssText = [
+        "width:100%",
+        "height:100%",
+        "display:flex",
+        "align-items:center",
+        "justify-content:center",
+        "overflow:hidden",
+        "background:rgba(20,12,8,.35)",
+        "border:1px solid rgba(255,255,255,.16)",
+        "box-shadow:0 12px 30px rgba(0,0,0,.22)",
+        "border-radius:2px"
+      ].join(";");
+
       const img = document.createElement("img");
       img.src = src;
       img.alt = alt;
@@ -95,12 +112,13 @@ document.addEventListener("DOMContentLoaded", () => {
       img.style.cssText = [
         "width:100%",
         "height:100%",
-        "object-fit:cover",
-        "display:block",
-        "border:1px solid rgba(255,255,255,.16)",
-        "box-shadow:0 12px 30px rgba(0,0,0,.22)"
+        "object-fit:contain",
+        "object-position:center",
+        "display:block"
       ].join(";");
-      photoGallery.appendChild(img);
+
+      frame.appendChild(img);
+      photoGallery.appendChild(frame);
     });
 
     leatherCard.prepend(photoGallery);
