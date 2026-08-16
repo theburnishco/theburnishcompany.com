@@ -59,21 +59,22 @@ document.addEventListener("DOMContentLoaded", () => {
       margin-bottom: 18px !important;
     }
 
-    /* Header logo: clean black-and-white treatment */
+    /* HEADER LOGO: transparent background + original black artwork */
     .logo-mark {
-      background: #000 !important;
-      padding: 12px 15px !important;
+      background: transparent !important;
+      padding: 0 !important;
     }
 
     .logo-mark .logo-image {
-      filter: brightness(0) invert(1) !important;
+      filter: none !important;
+      background: transparent !important;
     }
 
-    /* Footer logo: same black-and-white treatment */
+    /* FOOTER LOGO: transparent background + original black artwork */
     .footer-logo {
-      background: #000 !important;
-      padding: 12px 15px !important;
-      filter: brightness(0) invert(1) !important;
+      background: transparent !important;
+      padding: 0 !important;
+      filter: none !important;
       opacity: 1 !important;
     }
 
