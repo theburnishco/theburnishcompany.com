@@ -27,7 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
     .dovetail-board::before { content:""; position:absolute; left:18px; top:-38px; width:42px; height:38px; background:#b87945; border:3px solid #f2d0a7; border-bottom:0; clip-path:polygon(12% 0,88% 0,100% 100%,0 100%); }
     .dovetail-board::after { content:""; position:absolute; left:78px; top:-38px; width:42px; height:38px; background:#b87945; border:3px solid #f2d0a7; border-bottom:0; clip-path:polygon(12% 0,88% 0,100% 100%,0 100%); }
     .dovetail-fingers { position:absolute; top:18px; left:22px; right:22px; height:46px; border-top:3px solid #f2d0a7; border-bottom:3px solid #f2d0a7; background:repeating-linear-gradient(90deg, transparent 0 34px, #f2d0a7 34px 38px); opacity:.9; }
-    .wallet-gallery { margin-top:70px; padding:0 0 10px; }
+    .wallet-gallery { margin-top:70px; padding:0 0 10px; display:none; }
+    .wallet-gallery.is-open { display:block; }
     .wallet-gallery-heading { margin-bottom:28px; }
     .wallet-gallery-heading .eyebrow { margin-bottom:10px; }
     .wallet-gallery-heading h3 { font-size:42px; color:var(--cream); }
@@ -79,23 +80,48 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (leatherCard && collections) {
     const walletLink = document.createElement("a");
-    walletLink.className = "wallet-icon-link"; walletLink.href = "#wallet-gallery";
-    walletLink.setAttribute("aria-label", "View leather wallet gallery");
+    walletLink.className = "wallet-icon-link";
+    walletLink.href = "#wallet-gallery";
+    walletLink.setAttribute("aria-label", "Open leather wallet gallery");
     walletLink.innerHTML = '<span class="wallet-icon-wrap"><span class="wallet-icon" aria-hidden="true"></span><span class="wallet-icon-label">View Wallets</span></span>';
     leatherCard.prepend(walletLink);
 
-    const gallery = document.createElement("section"); gallery.id = "wallet-gallery"; gallery.className = "wallet-gallery";
+    const gallery = document.createElement("section");
+    gallery.id = "wallet-gallery";
+    gallery.className = "wallet-gallery";
     gallery.setAttribute("aria-label", "Leather wallet gallery");
     gallery.innerHTML = '<div class="wallet-gallery-heading"><p class="eyebrow">LEATHER GOODS</p><h3>Wallet Gallery</h3></div><div class="wallet-gallery-grid"><a class="wallet-gallery-frame" href="IMG_3722.jpeg" target="_blank" rel="noopener"><img src="IMG_3722.jpeg" alt="Handcrafted leather wallet" loading="lazy"></a><a class="wallet-gallery-frame" href="IMG_3723.jpeg" target="_blank" rel="noopener"><img src="IMG_3723.jpeg" alt="Handcrafted leather wallet detail" loading="lazy"></a></div>';
     collections.appendChild(gallery);
+
+    walletLink.addEventListener("click", (event) => {
+      event.preventDefault();
+      gallery.classList.toggle("is-open");
+      const isOpen = gallery.classList.contains("is-open");
+      walletLink.setAttribute("aria-expanded", String(isOpen));
+      if (isOpen) {
+        const headerHeight = header ? header.offsetHeight : 0;
+        window.setTimeout(() => {
+          window.scrollTo({ top: gallery.getBoundingClientRect().top + window.scrollY - headerHeight - 20, behavior:"smooth" });
+        }, 50);
+      }
+    });
   }
 
   if (woodCard) {
     const dovetailLink = document.createElement("a");
-    dovetailLink.className = "dovetail-icon-link"; dovetailLink.href = "#craft";
-    dovetailLink.setAttribute("aria-label", "View custom woodwork and dovetail craftsmanship");
+    dovetailLink.className = "dovetail-icon-link";
+    dovetailLink.href = "#craft";
+    dovetailLink.setAttribute("aria-label", "View fine woodworking gallery");
     dovetailLink.innerHTML = '<span class="dovetail-icon-wrap"><span class="dovetail-icon" aria-hidden="true"><span class="dovetail-board"></span><span class="dovetail-fingers"></span></span><span class="dovetail-icon-label">View Woodwork</span></span>';
     woodCard.prepend(dovetailLink);
+
+    dovetailLink.addEventListener("click", (event) => {
+      event.preventDefault();
+      const craft = document.querySelector("#craft");
+      if (!craft) return;
+      const heading = craft.querySelector("h2");
+      if (heading) heading.scrollIntoView({ behavior:"smooth", block:"start" });
+    });
   }
 
   const revealItems = document.querySelectorAll(".intro-grid, .collection-card, .value, .craft-grid, .contact-grid");
