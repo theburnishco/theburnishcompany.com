@@ -10,13 +10,31 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Hero: centered square brown box with an even, four-sided diagonal saddle-stitch border. */
     .hero .hero-art{display:flex;align-items:center;justify-content:center;min-height:520px}
     .hero .art-frame{width:min(500px,92vw);aspect-ratio:1;position:relative;display:flex;align-items:center;justify-content:center;padding:45px;background:var(--brown);border:0;box-shadow:30px 35px 80px rgba(45,28,20,.12);transform:none;color:#fff}
-    .hero .art-frame:before{content:"";position:absolute;inset:14px;z-index:4;pointer-events:none;background:repeating-linear-gradient(135deg,transparent 0 5px,#070605 5px 8px,transparent 8px 15px) top/100% 14px no-repeat,repeating-linear-gradient(45deg,transparent 0 5px,#070605 5px 8px,transparent 8px 15px) right/14px 100% no-repeat,repeating-linear-gradient(135deg,transparent 0 5px,#070605 5px 8px,transparent 8px 15px) bottom/100% 14px no-repeat,repeating-linear-gradient(45deg,transparent 0 5px,#070605 5px 8px,transparent 8px 15px) left/14px 100% no-repeat}
-    .hero .art-frame:after{content:"";position:absolute;inset:14px;z-index:3;pointer-events:none;border:1px solid rgba(0,0,0,.35)}
+
+    /* Realistic saddle-stitch treatment: paired diagonal thread passes between evenly spaced punched holes. */
+    .hero .art-frame:before{
+      content:"";position:absolute;inset:15px;z-index:4;pointer-events:none;border-radius:1px;
+      background:
+        /* top: diagonal thread */
+        repeating-linear-gradient(135deg,transparent 0 10px,#070605 10px 13px,transparent 13px 20px) top/100% 14px no-repeat,
+        /* right: diagonal thread in the opposite travel direction */
+        repeating-linear-gradient(45deg,transparent 0 10px,#070605 10px 13px,transparent 13px 20px) right/14px 100% no-repeat,
+        /* bottom */
+        repeating-linear-gradient(135deg,transparent 0 10px,#070605 10px 13px,transparent 13px 20px) bottom/100% 14px no-repeat,
+        /* left */
+        repeating-linear-gradient(45deg,transparent 0 10px,#070605 10px 13px,transparent 13px 20px) left/14px 100% no-repeat,
+        /* punched holes along each edge */
+        repeating-radial-gradient(circle at 7px 7px,#050403 0 2px,transparent 2.5px 10px) top/100% 14px no-repeat,
+        repeating-radial-gradient(circle at 7px 7px,#050403 0 2px,transparent 2.5px 10px) right/14px 100% no-repeat,
+        repeating-radial-gradient(circle at 7px 7px,#050403 0 2px,transparent 2.5px 10px) bottom/100% 14px no-repeat,
+        repeating-radial-gradient(circle at 7px 7px,#050403 0 2px,transparent 2.5px 10px) left/14px 100% no-repeat;
+      box-shadow:0 0 0 1px rgba(0,0,0,.15);
+    }
+    .hero .art-frame:after{content:"";position:absolute;inset:15px;z-index:3;pointer-events:none;border:1px solid rgba(0,0,0,.32)}
     .hero .art-frame img{position:relative;z-index:2;width:100%;height:auto;filter:brightness(0) invert(1)}
-    /* Consistent technical line-art buttons. */
+
     .collection-icon-link{position:absolute;inset:0;z-index:6;display:flex;align-items:center;justify-content:center;text-decoration:none;color:#fff}
     .collection-icon-wrap{display:flex;flex-direction:column;align-items:center;gap:16px;transform:translateY(-35px)}
     .collection-icon-image{display:block;width:235px;height:150px;object-fit:contain;filter:invert(1) sepia(.08) saturate(.35);opacity:.95;mix-blend-mode:screen;transition:transform .2s,opacity .2s}
