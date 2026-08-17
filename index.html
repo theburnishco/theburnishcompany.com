@@ -13,28 +13,22 @@
 
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Full perimeter leather saddle stitch: individual diagonal stitches on all four sides. */
-    .hero .art-frame:before {
-      content: "";
-      position: absolute;
-      inset: 14px;
-      border: 0;
-      border-radius: 2px;
-      padding: 0;
-      box-shadow: none;
-      opacity: 1;
-      background:
-        repeating-linear-gradient(135deg, transparent 0 7px, #050505 7px 9px, transparent 9px 16px) top center / 100% 12px no-repeat,
-        repeating-linear-gradient(45deg, transparent 0 7px, #050505 7px 9px, transparent 9px 16px) right center / 12px 100% no-repeat,
-        repeating-linear-gradient(135deg, transparent 0 7px, #050505 7px 9px, transparent 9px 16px) bottom center / 100% 12px no-repeat,
-        repeating-linear-gradient(45deg, transparent 0 7px, #050505 7px 9px, transparent 9px 16px) left center / 12px 100% no-repeat;
-      pointer-events: none;
-      z-index: 3;
-    }
+    /* Hero: square, level presentation with a continuous four-sided diagonal saddle-stitch border. */
+    .hero .hero-art{display:flex;align-items:center;justify-content:center;min-height:520px}
+    .hero .art-frame{width:min(500px,92vw);aspect-ratio:1;position:relative;display:flex;align-items:center;justify-content:center;padding:45px;background:var(--brown);border:0;box-shadow:30px 35px 80px rgba(45,28,20,.12);transform:none;color:#fff}
+    .hero .art-frame:before{content:"";position:absolute;inset:15px;z-index:4;pointer-events:none;background:repeating-linear-gradient(135deg,transparent 0 6px,#090806 6px 9px,transparent 9px 15px) top left/100% 12px no-repeat,repeating-linear-gradient(45deg,transparent 0 6px,#090806 6px 9px,transparent 9px 15px) top right/12px 100% no-repeat,repeating-linear-gradient(135deg,transparent 0 6px,#090806 6px 9px,transparent 9px 15px) bottom left/100% 12px no-repeat,repeating-linear-gradient(45deg,transparent 0 6px,#090806 6px 9px,transparent 9px 15px) top left/12px 100% no-repeat}
+    .hero .art-frame:after{content:"";position:absolute;inset:15px;z-index:3;pointer-events:none;border:1px solid rgba(0,0,0,.3)}
+    .hero .art-frame img{position:relative;z-index:2;width:100%;height:auto;filter:brightness(0) invert(1)}
 
-    .hero .art-frame {
-      border: 1px solid rgba(0,0,0,.28);
-    }
+    /* Found technical line-art references for the two collection buttons. */
+    .collection-icon-image{display:block;width:235px;height:150px;object-fit:contain;filter:invert(1) sepia(.08) saturate(.35);opacity:.95;mix-blend-mode:screen;transition:transform .2s,opacity .2s}
+    .collection-icon-link{position:absolute;inset:0;z-index:6;display:flex;align-items:center;justify-content:center;text-decoration:none;color:#fff}
+    .collection-icon-wrap{display:flex;flex-direction:column;align-items:center;gap:16px;transform:translateY(-35px)}
+    .collection-icon-label{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase}
+    .collection-icon-link:hover .collection-icon-image{transform:translateY(-5px) scale(1.025);opacity:1}
+    .collection-leather .collection-icon-link,.collection-wood .collection-icon-link{cursor:pointer}
+    .collection-leather .collection-content,.collection-wood .collection-content{z-index:5}
+    @media(max-width:600px){.hero .art-frame{padding:25px}.collection-icon-image{width:205px;height:135px}}
   </style>
 </head>
 
@@ -43,22 +37,10 @@
   <header class="site-header" id="top">
     <div class="nav wrap">
       <a class="brand" href="#top" aria-label="The Burnish Company home">
-        <span class="logo-mark">
-          <img src="ChatGPT Image Aug 13, 2026 at 10_29_46 PM.png" alt="The Burnish Company" class="logo-image">
-        </span>
+        <span class="logo-mark"><img src="ChatGPT Image Aug 13, 2026 at 10_29_46 PM.png" alt="The Burnish Company" class="logo-image"></span>
       </a>
-
-      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="main-navigation">
-        <span></span>
-        <span></span>
-      </button>
-
-      <nav id="main-navigation" class="main-navigation">
-        <a href="#collections">Collections</a>
-        <a href="#philosophy">Our Philosophy</a>
-        <a href="#craft">Craft</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="main-navigation"><span></span><span></span></button>
+      <nav id="main-navigation" class="main-navigation"><a href="#collections">Collections</a><a href="#philosophy">Our Philosophy</a><a href="#craft">Craft</a><a href="#contact">Contact</a></nav>
     </div>
   </header>
 
@@ -70,148 +52,41 @@
           <p class="eyebrow">HANDCRAFTED • TIMELESS • AMERICAN MADE</p>
           <h1>Made to be <em>kept.</em></h1>
           <p class="hero-description">Thoughtfully crafted leather goods and fine woodwork, made in small quantities for people who appreciate the beauty of things built to last.</p>
-          <div class="hero-actions">
-            <a href="#collections" class="button button-primary">Explore the Collection</a>
-            <a href="#philosophy" class="text-link">Discover our story <span>→</span></a>
-          </div>
+          <div class="hero-actions"><a href="#collections" class="button button-primary">Explore the Collection</a><a href="#philosophy" class="text-link">Discover our story <span>→</span></a></div>
         </div>
-
-        <div class="hero-art" aria-hidden="true">
-          <div class="art-frame">
-            <img src="ChatGPT Image Aug 13, 2026 at 10_29_46 PM.png" alt="">
-          </div>
-          <div class="art-caption">
-            <span>THE BURNISH CO.</span>
-            <span>EST. 2021</span>
-          </div>
-        </div>
+        <div class="hero-art" aria-hidden="true"><div class="art-frame"><img src="ChatGPT Image Aug 13, 2026 at 10_29_46 PM.png" alt=""></div><div class="art-caption"><span>THE BURNISH CO.</span><span>EST. 2021</span></div></div>
       </div>
-
-      <div class="hero-bottom wrap">
-        <span>Leather</span>
-        <span>Wood</span>
-        <span>Craft</span>
-        <span>Character</span>
-      </div>
+      <div class="hero-bottom wrap"><span>Leather</span><span>Wood</span><span>Craft</span><span>Character</span></div>
     </section>
 
-    <section class="intro section">
-      <div class="wrap intro-grid">
-        <div>
-          <p class="eyebrow">THE ART OF THE OBJECT</p>
-          <h2>Good things get better <em>with time.</em></h2>
-        </div>
-        <div class="intro-copy">
-          <p>We believe the best objects aren't made to be replaced. They're made to become part of your life.</p>
-          <p>From full-grain leather to carefully selected hardwoods, every Burnish piece is made with an appreciation for honest materials, traditional techniques, and thoughtful design.</p>
-        </div>
-      </div>
-    </section>
+    <section class="intro section"><div class="wrap intro-grid"><div><p class="eyebrow">THE ART OF THE OBJECT</p><h2>Good things get better <em>with time.</em></h2></div><div class="intro-copy"><p>We believe the best objects aren't made to be replaced. They're made to become part of your life.</p><p>From full-grain leather to carefully selected hardwoods, every Burnish piece is made with an appreciation for honest materials, traditional techniques, and thoughtful design.</p></div></div></section>
 
     <section id="collections" class="collections section-dark">
       <div class="wrap">
-        <div class="section-heading light">
-          <div>
-            <p class="eyebrow">THE COLLECTION</p>
-            <h2>Objects with <em>character.</em></h2>
-          </div>
-          <p>A considered selection of leather and woodwork, made in small runs and available for custom work.</p>
-        </div>
-
+        <div class="section-heading light"><div><p class="eyebrow">THE COLLECTION</p><h2>Objects with <em>character.</em></h2></div><p>A considered selection of leather and woodwork, made in small runs and available for custom work.</p></div>
         <div class="collection-grid">
           <article class="collection-card collection-leather">
             <div class="collection-overlay"></div>
-            <div class="collection-content">
-              <span class="collection-number">01</span>
-              <div>
-                <p class="card-label">LEATHER GOODS</p>
-                <h3>Wallet Gallery</h3>
-                <p>Full-grain leather, traditional construction, and details that become more beautiful with use.</p>
-                <a href="#contact" class="light-link">Enquire about leather goods <span>→</span></a>
-              </div>
-            </div>
+            <a class="collection-icon-link" href="#wallet-gallery" aria-label="Open Wallet Gallery"><span class="collection-icon-wrap"><img class="collection-icon-image" src="https://www.svgrepo.com/show/25978/leather-wallet.svg" alt="Leather wallet line drawing"><span class="collection-icon-label">Wallet Gallery</span></span></a>
+            <div class="collection-content"><span class="collection-number">01</span><div><p class="card-label">LEATHER GOODS</p><h3>Wallet Gallery</h3><p>Full-grain leather, traditional construction, and details that become more beautiful with use.</p><a href="#contact" class="light-link">Enquire about leather goods <span>→</span></a></div></div>
           </article>
-
           <article class="collection-card collection-wood">
             <div class="collection-overlay"></div>
-            <div class="collection-content">
-              <span class="collection-number">02</span>
-              <div>
-                <p class="card-label">FINE WOODWORK</p>
-                <h3>Fine Woodworking Gallery</h3>
-                <p>American hardwoods shaped into useful, enduring pieces with a natural sense of warmth.</p>
-                <a href="#contact" class="light-link">Enquire about woodwork <span>→</span></a>
-              </div>
-            </div>
+            <a class="collection-icon-link" href="#woodworking-gallery" aria-label="Open Fine Woodworking Gallery"><span class="collection-icon-wrap"><img class="collection-icon-image" src="https://commons.wikimedia.org/wiki/Special:FilePath/Smoothing_plane_drawing.png" alt="1908 smoothing plane technical drawing"><span class="collection-icon-label">Fine Woodworking Gallery</span></span></a>
+            <div class="collection-content"><span class="collection-number">02</span><div><p class="card-label">FINE WOODWORK</p><h3>Fine Woodworking Gallery</h3><p>American hardwoods shaped into useful, enduring pieces with a natural sense of warmth.</p><a href="#contact" class="light-link">Enquire about woodwork <span>→</span></a></div></div>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="philosophy" class="philosophy section">
-      <div class="wrap philosophy-grid">
-        <div class="philosophy-mark"><span>THE</span><strong>B</strong><span>CO.</span></div>
-        <div class="philosophy-copy">
-          <p class="eyebrow">OUR PHILOSOPHY</p>
-          <h2>Less, but <em>better.</em></h2>
-          <p class="large-copy">We're interested in the things that don't need explaining: beautiful materials, careful construction, and objects that feel better the longer you own them.</p>
-          <div class="values">
-            <div class="value"><span>01</span><div><h3>Honest Materials</h3><p>We let leather and wood speak for themselves, choosing materials for their character and longevity.</p></div></div>
-            <div class="value"><span>02</span><div><h3>Thoughtful Craft</h3><p>Traditional techniques meet modern, purposeful design. Nothing is added simply for decoration.</p></div></div>
-            <div class="value"><span>03</span><div><h3>Made to Last</h3><p>Our goal isn't to make something disposable. It's to make something worth keeping.</p></div></div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <section id="philosophy" class="philosophy section"><div class="wrap philosophy-grid"><div class="philosophy-mark"><span>THE</span><strong>B</strong><span>CO.</span></div><div class="philosophy-copy"><p class="eyebrow">OUR PHILOSOPHY</p><h2>Less, but <em>better.</em></h2><p class="large-copy">We're interested in the things that don't need explaining: beautiful materials, careful construction, and objects that feel better the longer you own them.</p><div class="values"><div class="value"><span>01</span><div><h3>Honest Materials</h3><p>We let leather and wood speak for themselves, choosing materials for their character and longevity.</p></div></div><div class="value"><span>02</span><div><h3>Thoughtful Craft</h3><p>Traditional techniques meet modern, purposeful design. Nothing is added simply for decoration.</p></div></div><div class="value"><span>03</span><div><h3>Made to Last</h3><p>Our goal isn't to make something disposable. It's to make something worth keeping.</p></div></div></div></div></div></section>
 
-    <section id="craft" class="craft section-dark">
-      <div class="wrap craft-grid">
-        <div class="craft-copy">
-          <p class="eyebrow">THE DETAILS MATTER</p>
-          <h2>Built by hand. <em>Finished with intention.</em></h2>
-          <p>Every piece carries the subtle marks of the maker. That's the point.</p>
-          <p>We embrace natural variation, hand-finished edges, visible grain, and the small imperfections that make a handmade object unmistakably its own.</p>
-        </div>
-        <div class="craft-stamp"><div class="stamp-inner"><span>HAND</span><strong>CRAFTED</strong><span>WITH PURPOSE</span></div></div>
-      </div>
-    </section>
+    <section id="craft" class="craft section-dark"><div class="wrap craft-grid"><div class="craft-copy"><p class="eyebrow">THE DETAILS MATTER</p><h2>Built by hand. <em>Finished with intention.</em></h2><p>Every piece carries the subtle marks of the maker. That's the point.</p><p>We embrace natural variation, hand-finished edges, visible grain, and the small imperfections that make a handmade object unmistakably its own.</p></div><div class="craft-stamp"><div class="stamp-inner"><span>HAND</span><strong>CRAFTED</strong><span>WITH PURPOSE</span></div></div></div></section>
 
-    <section id="contact" class="contact section">
-      <div class="wrap contact-grid">
-        <div>
-          <p class="eyebrow">START A CONVERSATION</p>
-          <h2>Have something <em>in mind?</em></h2>
-          <p class="contact-copy">Whether you're looking for a piece from our collection, a custom project, or simply want to learn more, we'd love to hear from you.</p>
-        </div>
-        <div class="contact-card">
-          <span class="card-label">GET IN TOUCH</span>
-          <a href="mailto:theburnishcompany@gmail.com" class="email-link">theburnishcompany@gmail.com</a>
-          <p>Custom orders and commissions welcome.</p>
-          <a href="mailto:theburnishcompany@gmail.com?subject=The%20Burnish%20Company%20Inquiry" class="button button-primary">Send an Inquiry</a>
-        </div>
-      </div>
-    </section>
+    <section id="contact" class="contact section"><div class="wrap contact-grid"><div><p class="eyebrow">START A CONVERSATION</p><h2>Have something <em>in mind?</em></h2><p class="contact-copy">Whether you're looking for a piece from our collection, a custom project, or simply want to learn more, we'd love to hear from you.</p></div><div class="contact-card"><span class="card-label">GET IN TOUCH</span><a href="mailto:theburnishcompany@gmail.com" class="email-link">theburnishcompany@gmail.com</a><p>Custom orders and commissions welcome.</p><a href="mailto:theburnishcompany@gmail.com?subject=The%20Burnish%20Company%20Inquiry" class="button button-primary">Send an Inquiry</a></div></div></section>
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap footer-grid">
-      <div>
-        <img src="ChatGPT Image Aug 13, 2026 at 10_29_46 PM.png" alt="The Burnish Company" class="footer-logo">
-        <p>Handcrafted leather & fine woodwork.</p>
-      </div>
-      <div class="footer-links">
-        <a href="#collections">Collections</a>
-        <a href="#philosophy">Philosophy</a>
-        <a href="#craft">Craft</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <div class="footer-meta">
-        <span>© 2026 The Burnish Company</span>
-        <span>Made to be kept.</span>
-      </div>
-    </div>
-  </footer>
-
+  <footer class="site-footer"><div class="wrap footer-grid"><div><img src="ChatGPT Image Aug 13, 2026 at 10_29_46 PM.png" alt="The Burnish Company" class="footer-logo"><p>Handcrafted leather & fine woodwork.</p></div><div class="footer-links"><a href="#collections">Collections</a><a href="#philosophy">Philosophy</a><a href="#craft">Craft</a><a href="#contact">Contact</a></div><div class="footer-meta"><span>© 2026 The Burnish Company</span><span>Made to be kept.</span></div></div></footer>
   <script src="script.js"></script>
 </body>
 </html>
