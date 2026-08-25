@@ -24,13 +24,7 @@ document.addEventListener("DOMContentLoaded",()=>{
     const woodLink=woodCard.querySelector(".collection-icon-link");
     let gallery=document.querySelector("#woodworking-gallery");
     if(!gallery){
-      gallery=document.createElement("section");
-      gallery.id="woodworking-gallery";
-      gallery.className="woodworking-gallery";
-      gallery.setAttribute("aria-label","Fine woodworking gallery");
-      gallery.innerHTML='<div class="woodworking-gallery-heading"><p class="eyebrow">FINE WOODWORK</p><h3>Woodworking Gallery</h3></div><div class="woodworking-gallery-grid"><a class="woodworking-gallery-frame" href="44B4E7CF-BC14-4AA3-BE37-607FF00D6211.jpeg" target="_blank" rel="noopener"><img src="44B4E7CF-BC14-4AA3-BE37-607FF00D6211.jpeg" alt="Fine woodworking piece" loading="lazy"></a><a class="woodworking-gallery-frame" href="5995285E-4D0A-43AC-88C3-E676BD0FD377.jpeg" target="_blank" rel="noopener"><img src="5995285E-4D0A-43AC-88C3-E676BD0FD377.jpeg" alt="Handcrafted woodworking piece" loading="lazy"></a><a class="woodworking-gallery-frame" href="606FA773-1DAA-4E93-A696-E3887DC2BE37.jpeg" target="_blank" rel="noopener"><img src="606FA773-1DAA-4E93-A696-E3887DC2BE37.jpeg" alt="Fine woodworking detail" loading="lazy"></a></div>';
-      collections.appendChild(gallery);
-    }
+      gallery=document.createElement("section");gallery.id="woodworking-gallery";gallery.className="woodworking-gallery";gallery.setAttribute("aria-label","Fine woodworking gallery");gallery.innerHTML='<div class="woodworking-gallery-heading"><p class="eyebrow">FINE WOODWORK</p><h3>Woodworking Gallery</h3></div><div class="woodworking-gallery-grid"><a class="woodworking-gallery-frame" href="44B4E7CF-BC14-4AA3-BE37-607FF00D6211.jpeg" target="_blank" rel="noopener"><img src="44B4E7CF-BC14-4AA3-BE37-607FF00D6211.jpeg" alt="Fine woodworking piece" loading="lazy"></a><a class="woodworking-gallery-frame" href="5995285E-4D0A-43AC-88C3-E676BD0FD377.jpeg" target="_blank" rel="noopener"><img src="5995285E-4D0A-43AC-88C3-E676BD0FD377.jpeg" alt="Handcrafted woodworking piece" loading="lazy"></a><a class="woodworking-gallery-frame" href="606FA773-1DAA-4E93-A696-E3887DC2BE37.jpeg" target="_blank" rel="noopener"><img src="606FA773-1DAA-4E93-A696-E3887DC2BE37.jpeg" alt="Fine woodworking detail" loading="lazy"></a></div>';collections.appendChild(gallery)}
     if(woodLink){woodLink.setAttribute("href","#woodworking-gallery");woodLink.setAttribute("aria-label","Open fine woodworking gallery");woodLink.setAttribute("aria-expanded","false");woodLink.addEventListener("click",event=>{event.preventDefault();gallery.classList.toggle("is-open");const open=gallery.classList.contains("is-open");woodLink.setAttribute("aria-expanded",String(open));if(open){const hh=header?header.offsetHeight:0;setTimeout(()=>window.scrollTo({top:gallery.getBoundingClientRect().top+window.scrollY-hh-20,behavior:"smooth"}),50)}})}
   }
 
@@ -38,34 +32,16 @@ document.addEventListener("DOMContentLoaded",()=>{
   const orderNav=document.createElement("a");orderNav.href="#custom-order";orderNav.textContent="Custom Order";if(navigation)navigation.appendChild(orderNav);
   const contact=document.querySelector("#contact");
   if(contact&&!document.querySelector("#custom-order")){
-    const order=document.createElement("section");
-    order.id="custom-order";
+    const order=document.createElement("section");order.id="custom-order";
     order.innerHTML=`<div class="wrap order-grid"><div class="order-intro"><p class="eyebrow">THE BURNISH COMPANY • CUSTOM WORK</p><h2>Made for <em>one.</em></h2><p class="order-intro-copy">Every custom piece begins with a purpose. Tell us what you have in mind and we'll work with you to create something made specifically for you.</p><span class="order-tag">Individual. Purposeful. Handmade.</span></div><div class="order-card"><div class="order-card-header"><div><p class="eyebrow">CUSTOM ORDER FORM</p><h3>Item Details</h3></div><span class="order-number">NO. 01</span></div><form class="order-form" id="custom-order-form"><div class="order-field"><label for="order-item">Item Name <span class="required">*</span></label><select id="order-item" name="item" required><option value="" selected disabled>Select an item</option><option value="Cutting Board">Cutting Board</option><option value="Wallet">Wallet</option></select></div><div class="order-field"><label for="order-date">Date</label><input id="order-date" name="date" type="date"></div><div class="order-field"><label for="order-customer">Customer <span class="required">*</span></label><input id="order-customer" name="customer" type="text" placeholder="Your name" required></div><div class="order-field"><label for="order-material">Material</label><select id="order-material" name="material" required><option value="" selected disabled>Select material</option></select></div><div class="order-field full"><label for="order-spec">Spec. Instructions</label><textarea id="order-spec" name="spec" placeholder="Color, dimensions, materials, features, engraving, hardware, or anything else you'd like us to know."></textarea></div><div class="order-field full"><label for="order-special">Special Instructions</label><textarea id="order-special" name="special" placeholder="Any special requests or details for your piece."></textarea></div><div class="order-field full"><label for="order-signature">Artist's Signature / Notes</label><input id="order-signature" name="signature" type="text" placeholder="Optional"></div><div class="order-submit-row"><button class="button button-primary order-submit" type="submit">Send Custom Order Request</button><p class="order-note">Your email app will open with the completed form ready to send.</p></div><div class="order-success" id="order-success">Your order request has been prepared. Please send the email that opened to complete your inquiry.</div></form></div></div>`;
     contact.parentNode.insertBefore(order,contact);
-
     const itemSelect=document.querySelector("#order-item"),materialSelect=document.querySelector("#order-material");
     const woodOptions=["Walnut","Maple","Cherry"];
-    const dublinOptions=["Black","Brown Nut","Cobalt Blue","English Tan","Greener Pastures","Golf Green","Natural","Light Natural","Olde English","Russet Brown"];
-    const updateMaterialOptions=()=>{
-      const item=itemSelect.value;
-      const options=item==="Cutting Board"?woodOptions:item==="Wallet"?dublinOptions:[];
-      materialSelect.innerHTML='<option value="" selected disabled>Select '+(item==="Cutting Board"?"wood type":item==="Wallet"?"Horween Dublin color":"material")+'</option>';
-      options.forEach(option=>{const el=document.createElement("option");el.value=option;el.textContent=option;materialSelect.appendChild(el)});
-      materialSelect.disabled=!item;
-    };
+    const dublinOptions=["Black","Brown Nut","English Tan"];
+    const updateMaterialOptions=()=>{const item=itemSelect.value;const options=item==="Cutting Board"?woodOptions:item==="Wallet"?dublinOptions:[];materialSelect.innerHTML='<option value="" selected disabled>Select '+(item==="Cutting Board"?"wood type":item==="Wallet"?"Horween Dublin color":"material")+'</option>';options.forEach(option=>{const el=document.createElement("option");el.value=option;el.textContent=option;materialSelect.appendChild(el)});materialSelect.disabled=!item};
     itemSelect.addEventListener("change",updateMaterialOptions);updateMaterialOptions();
-
-    document.querySelector("#custom-order-form").addEventListener("submit",event=>{
-      event.preventDefault();
-      const form=event.currentTarget, data=new FormData(form);
-      const subject=`Custom Order Request — ${data.get("item")||"Burnish Company"}`;
-      const body=["THE BURNISH COMPANY — CUSTOM ORDER REQUEST","","Item Name: "+(data.get("item")||""),"Date: "+(data.get("date")||""),"Customer: "+(data.get("customer")||""),"Material: "+(data.get("material")||""),"","Spec. Instructions:",data.get("spec")||"","","Special Instructions:",data.get("special")||"","","Artist's Signature / Notes:",data.get("signature")||""].join("\n");
-      document.querySelector("#order-success").classList.add("is-visible");
-      window.location.href=`mailto:theburnishcompany@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    });
+    document.querySelector("#custom-order-form").addEventListener("submit",event=>{event.preventDefault();const form=event.currentTarget,data=new FormData(form);const subject=`Custom Order Request — ${data.get("item")||"Burnish Company"}`;const body=["THE BURNISH COMPANY — CUSTOM ORDER REQUEST","","Item Name: "+(data.get("item")||""),"Date: "+(data.get("date")||""),"Customer: "+(data.get("customer")||""),"Material: "+(data.get("material")||""),"","Spec. Instructions:",data.get("spec")||"","","Special Instructions:",data.get("special")||"","","Artist's Signature / Notes:",data.get("signature")||""].join("\n");document.querySelector("#order-success").classList.add("is-visible");window.location.href=`mailto:theburnishcompany@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`});
   }
 
-  const revealItems=document.querySelectorAll(".intro-grid,.collection-card,.value,.craft-grid,.contact-grid,#custom-order .order-card");
-  if("IntersectionObserver"in window){const observer=new IntersectionObserver((entries,o)=>entries.forEach(entry=>{if(!entry.isIntersecting)return;entry.target.classList.add("is-visible");o.unobserve(entry.target)}),{threshold:.12,rootMargin:"0px 0px -50px 0px"});revealItems.forEach(item=>{item.classList.add("reveal");observer.observe(item)})}
-  console.log("The Burnish Company — premium homepage loaded.");
+  const revealItems=document.querySelectorAll(".intro-grid,.collection-card,.value,.craft-grid,.contact-grid,#custom-order .order-card");if("IntersectionObserver"in window){const observer=new IntersectionObserver((entries,o)=>entries.forEach(entry=>{if(!entry.isIntersecting)return;entry.target.classList.add("is-visible");o.unobserve(entry.target)}),{threshold:.12,rootMargin:"0px 0px -50px 0px"});revealItems.forEach(item=>{item.classList.add("reveal");observer.observe(item)})}console.log("The Burnish Company — premium homepage loaded.");
 });
