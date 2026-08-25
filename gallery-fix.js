@@ -32,4 +32,6 @@ document.addEventListener("DOMContentLoaded",()=>{
   const openGallery=gallery=>{gallery.classList.add("is-open");gallery.scrollIntoView({behavior:"smooth",block:"start"})};
   document.querySelector(".collection-leather .collection-icon-link")?.addEventListener("click",event=>{event.preventDefault();openGallery(wallet)});
   document.querySelector(".collection-wood .collection-icon-link")?.addEventListener("click",event=>{event.preventDefault();openGallery(wood)});
+  const contactHeading=document.querySelector("#contact h2");
+  if(contactHeading)contactHeading.innerHTML=contactHeading.innerHTML.replace("Have something <em>in mind?</em>","Have something <em>else in mind?</em>");
 });
