@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded',()=>{
 const menuToggle=document.querySelector('.menu-toggle'),navigation=document.querySelector('.main-navigation');
-if(menuToggle&&navigation){menuToggle.addEventListener('click',()=>{const open=navigation.classList.toggle('open');menuToggle.classList.toggle('active',open);menuToggle.setAttribute('aria-expanded',String(open))});navigation.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navigation.classList.remove('open')))}
+if(menuToggle&&navigation){
+  menuToggle.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();const open=navigation.classList.toggle('open');menuToggle.classList.toggle('active',open);menuToggle.setAttribute('aria-expanded',String(open));document.body.classList.toggle('menu-open',open)});
+  navigation.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navigation.classList.remove('open');menuToggle.classList.remove('active');menuToggle.setAttribute('aria-expanded','false');document.body.classList.remove('menu-open')}));
+}
 const orderStyles=document.createElement('link');orderStyles.rel='stylesheet';orderStyles.href='order-form.css';document.head.appendChild(orderStyles);
 if(navigation&&!navigation.querySelector('a[href="#custom-order"]')){const a=document.createElement('a');a.href='#custom-order';a.textContent='Custom Quote';navigation.appendChild(a)}
 const contact=document.querySelector('#contact');
