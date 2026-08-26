@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded',()=>{
 const menuToggle=document.querySelector('.menu-toggle'),navigation=document.querySelector('.main-navigation');
 if(menuToggle&&navigation){
+  const menuStyle=document.createElement('style');
+  menuStyle.textContent='@media(max-width:600px){.main-navigation.open{display:flex;position:absolute;top:82px;left:16px;right:16px;z-index:1001;flex-direction:column;align-items:stretch;gap:0;padding:12px 0;background:rgba(251,249,245,.98);backdrop-filter:blur(14px);border:1px solid rgba(23,19,15,.12);box-shadow:0 16px 35px rgba(23,19,15,.12)}.main-navigation.open a{display:block;padding:15px 20px;font-size:11px}.main-navigation.open a:after{display:none}.menu-toggle{position:relative;z-index:1002;cursor:pointer;border:0;background:transparent}.menu-toggle.active span:first-child{transform:translateY(3.5px) rotate(45deg)}.menu-toggle.active span:last-child{transform:translateY(-3.5px) rotate(-45deg)}}';
+  document.head.appendChild(menuStyle);
   menuToggle.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();const open=navigation.classList.toggle('open');menuToggle.classList.toggle('active',open);menuToggle.setAttribute('aria-expanded',String(open));document.body.classList.toggle('menu-open',open)});
   navigation.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navigation.classList.remove('open');menuToggle.classList.remove('active');menuToggle.setAttribute('aria-expanded','false');document.body.classList.remove('menu-open')}));
 }
