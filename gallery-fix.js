@@ -19,6 +19,17 @@ document.addEventListener("DOMContentLoaded",()=>{
     return section;
   };
 
+  const makeStineGallery=()=>{
+    const section=document.createElement("section");section.id="stine-gallery";section.className="site-gallery";
+    section.innerHTML=`<div class="wrap"><div class="site-gallery-heading"><div><p class="eyebrow">LEATHER GOODS</p><h2>The Stine</h2><p>Three views of a uniquely crafted wallet.</p></div><button class="site-gallery-close" type="button">Close Gallery</button></div><div class="gallery-cover wallet-gallery-cover"><div class="gallery-cover-photo"><img src="photos/wallets/stine/IMG_3719.jpeg" alt="The Stine wallet"></div><h3 class="gallery-cover-title">The Stine</h3><p class="gallery-cover-note">Click to view all photos</p></div><div class="gallery-details"><button class="gallery-back" type="button">← Back to Cover</button><div class="site-gallery-main"><div class="site-gallery-main-photo"><img src="photos/wallets/stine/IMG_3719.jpeg" alt="The Stine wallet"></div><div class="site-gallery-thumbs"><button class="site-gallery-thumb" type="button"><img src="photos/wallets/stine/IMG_3719.jpeg" alt="The Stine wallet cover view"></button><button class="site-gallery-thumb" type="button"><img src="photos/wallets/stine/IMG_3720.jpeg" alt="The Stine wallet detail view"></button><button class="site-gallery-thumb" type="button"><img src="photos/wallets/stine/IMG_3721.jpeg" alt="The Stine wallet additional view"></button></div></div></div></div>`;
+    const cover=section.querySelector(".gallery-cover"),details=section.querySelector(".gallery-details"),main=section.querySelector(".site-gallery-main-photo img");
+    cover.addEventListener("click",()=>{cover.style.display="none";details.classList.add("is-visible")});
+    section.querySelector(".gallery-back").addEventListener("click",()=>{details.classList.remove("is-visible");cover.style.display="flex"});
+    section.querySelectorAll(".site-gallery-thumb").forEach(button=>button.addEventListener("click",()=>{const image=button.querySelector("img");main.src=image.src;main.alt=image.alt}));
+    section.querySelector(".site-gallery-close").addEventListener("click",()=>{section.classList.remove("is-open");details.classList.remove("is-visible");cover.style.display="flex"});
+    return section;
+  };
+
   const makeWoodGallery=()=>{
     const section=document.createElement("section");section.id="woodworking-gallery";section.className="site-gallery";
     section.innerHTML=`<div class="wrap"><div class="site-gallery-heading"><div><p class="eyebrow">WOODWORK</p><h2>Woodworking</h2><p>Three handcrafted cutting boards.</p></div><button class="site-gallery-close" type="button">Close Gallery</button></div><div class="gallery-cover-grid"><div class="gallery-cover-card"><div class="gallery-cover-photo"><img src="photos/woodworking/44B4E7CF-BC14-4AA3-BE37-607FF00D6211.jpeg" alt="Maple Cutting Board"></div><h3 class="gallery-cover-title">Maple Cutting Board</h3></div><div class="gallery-cover-card"><div class="gallery-cover-photo"><img src="photos/woodworking/606FA773-1DAA-4E93-A696-E3887DC2BE37.jpeg" alt="Cherry Cutting Board"></div><h3 class="gallery-cover-title">Cherry Cutting Board</h3></div><div class="gallery-cover-card"><div class="gallery-cover-photo"><img src="photos/woodworking/5995285E-4D0A-43AC-88C3-E676BD0FD377.jpeg" alt="Walnut Cutting Board"></div><h3 class="gallery-cover-title">Walnut Cutting Board</h3></div></div></div>`;
@@ -26,9 +37,9 @@ document.addEventListener("DOMContentLoaded",()=>{
     return section;
   };
 
-  const wallet=makeWalletGallery(),wood=makeWoodGallery();
+  const wallet=makeWalletGallery(),stine=makeStineGallery(),wood=makeWoodGallery();
   const grid=collections.querySelector(".collection-grid");
-  if(grid){grid.insertAdjacentElement("afterend",wallet);wallet.insertAdjacentElement("afterend",wood)}
+  if(grid){grid.insertAdjacentElement("afterend",wallet);wallet.insertAdjacentElement("afterend",stine);stine.insertAdjacentElement("afterend",wood)}
   const openGallery=gallery=>{gallery.classList.add("is-open");gallery.scrollIntoView({behavior:"smooth",block:"start"})};
   document.querySelector(".collection-leather .collection-icon-link")?.addEventListener("click",event=>{event.preventDefault();openGallery(wallet)});
   document.querySelector(".collection-wood .collection-icon-link")?.addEventListener("click",event=>{event.preventDefault();openGallery(wood)});
