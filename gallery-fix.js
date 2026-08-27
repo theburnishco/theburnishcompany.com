@@ -10,40 +10,24 @@ document.addEventListener("DOMContentLoaded",()=>{
 
   const makeWalletGallery=()=>{
     const section=document.createElement("section");section.id="wallet-gallery";section.className="site-gallery";
-    section.innerHTML=`<div class="wrap"><div class="site-gallery-heading"><div><p class="eyebrow">LEATHER GOODS</p><h2>Wallets</h2><p>Individually made, for an individual purpose.</p></div><button class="site-gallery-close" type="button">Close Gallery</button></div><div class="gallery-cover-grid"><div class="gallery-cover-card" data-gallery="ave"><div class="gallery-cover-photo"><img src="photos/wallets/the-ave/IMG_3722.jpeg" alt="The Ave wallet"></div><h3 class="gallery-cover-title">The Ave</h3><p class="gallery-cover-note">View Gallery</p></div><div class="gallery-cover-card" data-gallery="stine"><div class="gallery-cover-photo"><img src="photos/wallets/stine/IMG_3719.jpeg" alt="The Stine wallet"></div><h3 class="gallery-cover-title">The Stine</h3><p class="gallery-cover-note">View Gallery</p></div></div><div class="gallery-details" data-gallery-details="ave"><button class="gallery-back" type="button">← Back to Wallets</button><div class="site-gallery-main"><div class="site-gallery-main-photo"><img src="photos/wallets/the-ave/IMG_3722.jpeg" alt="The Ave wallet"></div><div class="site-gallery-thumbs"><button class="site-gallery-thumb" type="button"><img src="photos/wallets/the-ave/IMG_3722.jpeg" alt="The Ave wallet front view"></button><button class="site-gallery-thumb" type="button"><img src="photos/wallets/the-ave/IMG_3723.jpeg" alt="The Ave wallet detail view"></button></div></div></div><div class="gallery-details" data-gallery-details="stine"><button class="gallery-back" type="button">← Back to Wallets</button><div class="site-gallery-main"><div class="site-gallery-main-photo"><img src="photos/wallets/stine/IMG_3719.jpeg" alt="The Stine wallet"></div><div class="site-gallery-thumbs"><button class="site-gallery-thumb" type="button"><img src="photos/wallets/stine/IMG_3719.jpeg" alt="The Stine wallet cover view"></button><button class="site-gallery-thumb" type="button"><img src="photos/wallets/stine/IMG_3720.jpeg" alt="The Stine wallet detail view"></button><button class="site-gallery-thumb" type="button"><img src="photos/wallets/stine/IMG_3721.jpeg" alt="The Stine wallet additional view"></button></div></div></div></div>`;
+    section.innerHTML=`<div class="wrap"><div class="site-gallery-heading"><div><p class="eyebrow">LEATHER GOODS</p><h2>Wallets</h2><p>Individually made, for an individual purpose.</p></div><button class="site-gallery-close" type="button">Close Gallery</button></div><div class="gallery-cover-grid"><div class="gallery-cover-card" data-gallery="ave"><div class="gallery-cover-photo"><img src="photos/wallets/the-ave/IMG_3722.jpeg" alt="The Ave wallet"></div><h3 class="gallery-cover-title">The Ave</h3><p class="gallery-cover-note">View Gallery</p></div><div class="gallery-cover-card" data-gallery="nest-egg"><div class="gallery-cover-photo"><img src="photos/wallets/stine/IMG_3719.jpeg" alt="The Nest Egg wallet"></div><h3 class="gallery-cover-title">The Nest Egg</h3><p class="gallery-cover-note">View Gallery</p></div></div><div class="gallery-details" data-gallery-details="ave"><button class="gallery-back" type="button">← Back to Wallets</button><div class="site-gallery-main"><div class="site-gallery-main-photo"><img src="photos/wallets/the-ave/IMG_3722.jpeg" alt="The Ave wallet"></div><div class="site-gallery-thumbs"><button class="site-gallery-thumb" type="button"><img src="photos/wallets/the-ave/IMG_3722.jpeg" alt="The Ave wallet front view"></button><button class="site-gallery-thumb" type="button"><img src="photos/wallets/the-ave/IMG_3723.jpeg" alt="The Ave wallet detail view"></button></div></div></div><div class="gallery-details" data-gallery-details="nest-egg"><button class="gallery-back" type="button">← Back to Wallets</button><div class="site-gallery-main"><div class="site-gallery-main-photo"><img src="photos/wallets/stine/IMG_3719.jpeg" alt="The Nest Egg wallet"></div><div class="site-gallery-thumbs"><button class="site-gallery-thumb" type="button"><img src="photos/wallets/stine/IMG_3719.jpeg" alt="The Nest Egg wallet cover view"></button><button class="site-gallery-thumb" type="button"><img src="photos/wallets/stine/IMG_3720.jpeg" alt="The Nest Egg wallet detail view"></button><button class="site-gallery-thumb" type="button"><img src="photos/wallets/stine/IMG_3721.jpeg" alt="The Nest Egg wallet additional view"></button></div></div></div></div>`;
     const covers=section.querySelectorAll(".gallery-cover-card"),details=section.querySelectorAll(".gallery-details");
-    covers.forEach(cover=>cover.addEventListener("click",()=>{
-      const key=cover.dataset.gallery;
-      covers.forEach(c=>c.style.display="none");
-      details.forEach(d=>d.classList.toggle("is-visible",d.dataset.galleryDetails===key));
-    }));
-    section.querySelectorAll(".gallery-back").forEach(button=>button.addEventListener("click",()=>{
-      details.forEach(d=>d.classList.remove("is-visible"));
-      covers.forEach(c=>c.style.display="flex");
-    }));
-    details.forEach(detail=>{
-      const main=detail.querySelector(".site-gallery-main-photo img");
-      detail.querySelectorAll(".site-gallery-thumb").forEach(button=>button.addEventListener("click",()=>{const image=button.querySelector("img");main.src=image.src;main.alt=image.alt}));
-    });
-    section.querySelector(".site-gallery-close").addEventListener("click",()=>{
-      section.classList.remove("is-open");details.forEach(d=>d.classList.remove("is-visible"));covers.forEach(c=>c.style.display="flex");
-    });
+    covers.forEach(cover=>cover.addEventListener("click",()=>{const key=cover.dataset.gallery;covers.forEach(c=>c.style.display="none");details.forEach(d=>d.classList.toggle("is-visible",d.dataset.galleryDetails===key));}));
+    section.querySelectorAll(".gallery-back").forEach(button=>button.addEventListener("click",()=>{details.forEach(d=>d.classList.remove("is-visible"));covers.forEach(c=>c.style.display="flex");}));
+    details.forEach(detail=>{const main=detail.querySelector(".site-gallery-main-photo img");detail.querySelectorAll(".site-gallery-thumb").forEach(button=>button.addEventListener("click",()=>{const image=button.querySelector("img");main.src=image.src;main.alt=image.alt;}));});
+    section.querySelector(".site-gallery-close").addEventListener("click",()=>{section.classList.remove("is-open");details.forEach(d=>d.classList.remove("is-visible"));covers.forEach(c=>c.style.display="flex");});
     return section;
   };
 
   const makeWoodGallery=()=>{
     const section=document.createElement("section");section.id="woodworking-gallery";section.className="site-gallery";
     section.innerHTML=`<div class="wrap"><div class="site-gallery-heading"><div><p class="eyebrow">WOODWORK</p><h2>Woodworking</h2><p>Handcrafted cutting boards, organized by species.</p></div><button class="site-gallery-close" type="button">Close Gallery</button></div><div class="gallery-cover-grid"><div class="gallery-cover-card"><div class="gallery-cover-photo"><img src="photos/woodworking/maple/IMG_44B4E7CF.jpeg" alt="Maple Cutting Board"></div><h3 class="gallery-cover-title">Maple Cutting Board</h3></div><div class="gallery-cover-card"><div class="gallery-cover-photo"><img src="photos/woodworking/cherry/IMG_5995285E.jpeg" alt="Cherry Cutting Board"></div><h3 class="gallery-cover-title">Cherry Cutting Board</h3></div><div class="gallery-cover-card"><div class="gallery-cover-photo"><img src="photos/woodworking/walnut/IMG_606FA773.jpeg" alt="Walnut Cutting Board"></div><h3 class="gallery-cover-title">Walnut Cutting Board</h3></div></div></div>`;
-    section.querySelector(".site-gallery-close").addEventListener("click",()=>section.classList.remove("is-open"));
-    return section;
+    section.querySelector(".site-gallery-close").addEventListener("click",()=>section.classList.remove("is-open"));return section;
   };
 
-  const wallet=makeWalletGallery(),wood=makeWoodGallery();
-  const grid=collections.querySelector(".collection-grid");
-  if(grid){grid.insertAdjacentElement("afterend",wallet);wallet.insertAdjacentElement("afterend",wood)}
+  const wallet=makeWalletGallery(),wood=makeWoodGallery();const grid=collections.querySelector(".collection-grid");if(grid){grid.insertAdjacentElement("afterend",wallet);wallet.insertAdjacentElement("afterend",wood)}
   const openGallery=gallery=>{gallery.classList.add("is-open");gallery.scrollIntoView({behavior:"smooth",block:"start"})};
   document.querySelector(".collection-leather .collection-icon-link")?.addEventListener("click",event=>{event.preventDefault();openGallery(wallet)});
   document.querySelector(".collection-wood .collection-icon-link")?.addEventListener("click",event=>{event.preventDefault();openGallery(wood)});
-  const contactHeading=document.querySelector("#contact h2");
-  if(contactHeading)contactHeading.innerHTML=contactHeading.innerHTML.replace("Have something <em>in mind?</em>","Have something <em>else in mind?</em>");
+  const contactHeading=document.querySelector("#contact h2");if(contactHeading)contactHeading.innerHTML=contactHeading.innerHTML.replace("Have something <em>in mind?</em>","Have something <em>else in mind?</em>");
 });
